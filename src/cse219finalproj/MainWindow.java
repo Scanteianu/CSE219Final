@@ -5,6 +5,7 @@
  */
 package cse219finalproj;
 
+import GUICompEditors.ComponentEditorWrapper;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,7 +27,11 @@ public class MainWindow implements Initializable {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
-    
+     @FXML
+    private void insertImg(ActionEvent event) {
+          ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.edit();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

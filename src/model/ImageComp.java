@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cse219finalproj.model;
+package model;
 
 /**
  *
  * @author Dan
  */
-public class VideoComp implements PageComponent{
+public class ImageComp implements PageComponent{
     private String name="";
     private String caption="";
     private String fileLocation="";
     private String fileName="";
-    private final CompType type=CompType.VIDEO;
 
     public String getFileName() {
         return fileName;
@@ -23,6 +22,7 @@ public class VideoComp implements PageComponent{
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+    private final CompType type=CompType.IMAGE;
 
     public String getName() {
         return name;

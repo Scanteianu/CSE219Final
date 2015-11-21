@@ -1,26 +1,28 @@
 /*
 Paragraph and Heading Only
  */
-package cse219finalproj.model;
+package model;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Dan
  */
-public class TextComp implements PageComponent {
+public class ListComp implements PageComponent {
     private String name;
     private CompType type;
 
     public void setType(CompType type) {
         this.type = type;
     }
-    private String text;
+    private ArrayList<String> text;
 
-    public String getText() {
+    public ArrayList<String> getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(ArrayList<String>  text) {
         this.text = text;
     }
     

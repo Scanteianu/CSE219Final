@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse219finalproj.MainWindow">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -24,14 +23,14 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Insert">
+            <Menu mnemonicParsing="false" onAction="#insertImg" text="Insert">
               <items>
                 <MenuItem mnemonicParsing="false" text="New page" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Heading" />
                   <MenuItem mnemonicParsing="false" text="Paragraph" />
                   <MenuItem mnemonicParsing="false" text="List" />
-                  <MenuItem mnemonicParsing="false" text="Photo" />
+                  <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Photo" />
                   <MenuItem mnemonicParsing="false" text="Video" />
                   <MenuItem mnemonicParsing="false" text="Slideshow" />
               </items>
@@ -69,9 +68,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Label" />
+            <Label text=" Title" />
             <TextField GridPane.columnIndex="1" />
-            <Label text="Label" GridPane.rowIndex="1" />
+            <Label text="Author" GridPane.rowIndex="1" />
             <Label text="Label" GridPane.rowIndex="2" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />

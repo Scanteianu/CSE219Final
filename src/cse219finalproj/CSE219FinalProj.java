@@ -5,6 +5,10 @@
  */
 package cse219finalproj;
 
+import GUICompEditors.ComponentEditorWrapper;
+import model.Page;
+import model.PageComponent;
+import model.Site;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +23,7 @@ public class CSE219FinalProj extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -31,7 +35,15 @@ public class CSE219FinalProj extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         launch(args);
+        
     }
-    
+    public void editComponent(PageComponent pc){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.edit();
+    }
+    public static PageComponent currentComponent;
+    public static Page currentPage;
+    public static Site currentSite;
 }

@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cse219finalproj.model;
-
-import java.util.ArrayList;
+package model;
 
 /**
  *
  * @author Dan
  */
-public class Site {
-    private ArrayList<Page> pages = new ArrayList<Page>();
-    private String name="";
-    private Layout layout;
-    
+public interface PageComponent {
+    public String getName();
+    public void setName(String name);
+    public String toHTML();
+    public CompType getType();
 }
