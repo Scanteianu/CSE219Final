@@ -41,7 +41,6 @@ public class CSE219FinalProj extends Application {
     }
     public void editComponent(PageComponent pc){
         ComponentEditorWrapper cer = new ComponentEditorWrapper();
-        cer.edit();
     }
     public static PageComponent currentComponent;
     public static Page currentPage;

@@ -28,7 +28,7 @@ public class ImageEditorController implements Initializable {
         // TODO
     }    
     public void okClicked(ActionEvent e){
-        
+        ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
     public void cancelClicked(ActionEvent e){
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();

@@ -7,7 +7,10 @@ package GUICompEditors;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -23,5 +26,10 @@ public class ParagraphEditorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+     public void okClicked(ActionEvent e){
+        ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
+    }
+    public void cancelClicked(ActionEvent e){
+        ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
+    }
 }

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import model.CompType;
 
 /**
  *
@@ -30,7 +31,12 @@ public class MainWindow implements Initializable {
      @FXML
     private void insertImg(ActionEvent event) {
           ComponentEditorWrapper cer = new ComponentEditorWrapper();
-        cer.edit();
+        cer.make(CompType.IMAGE);
+    }
+    @FXML
+    private void insertParagraph(ActionEvent event){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.make(CompType.PARAGRAPH);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

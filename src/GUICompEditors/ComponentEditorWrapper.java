@@ -12,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.CompType;
+import model.PageComponent;
 
 /**
  *
@@ -21,17 +23,33 @@ public class ComponentEditorWrapper {
     public ComponentEditorWrapper(){
         
     }
-    public void edit(){
+    public void make(CompType type){
        
-        
+        String title="";
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("ImageEditor.fxml"));
+            Parent root=null;
+            switch(type){
+                case IMAGE:
+                    root= FXMLLoader.load(getClass().getResource("ImageEditor.fxml"));
+                    title="Add Image";
+                    break;
+                case PARAGRAPH:
+                    root= FXMLLoader.load(getClass().getResource("ParagraphEditor.fxml"));
+                    title="Add Text";
+                    break;
+                
+            }
+            
             Scene scene=new Scene(root);
             Stage compStage=new Stage();
             compStage.setScene(scene);
             compStage.show();
+            compStage.setTitle(title);
         } catch (IOException ex) {
             Logger.getLogger(ComponentEditorWrapper.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public void edit(PageComponent comp){
+        
     }
 }

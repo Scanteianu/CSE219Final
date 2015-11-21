@@ -23,16 +23,16 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" onAction="#insertImg" text="Insert">
+            <Menu mnemonicParsing="false" text="Insert">
               <items>
                 <MenuItem mnemonicParsing="false" text="New page" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" text="Heading" />
-                  <MenuItem mnemonicParsing="false" text="Paragraph" />
+                  <MenuItem mnemonicParsing="false" onAction="#insertParagraph" text="Paragraph" />
                   <MenuItem mnemonicParsing="false" text="List" />
-                  <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Photo" />
-                  <MenuItem mnemonicParsing="false" text="Video" />
+                  <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image" />
                   <MenuItem mnemonicParsing="false" text="Slideshow" />
+                  <MenuItem mnemonicParsing="false" text="Video" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="View">
