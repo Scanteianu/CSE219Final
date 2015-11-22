@@ -32,9 +32,16 @@
     margin: 10px;
     -fx-background-color: darkblue;
 }
+
 .label{
     -fx-alignment: CENTER;
-    -fx-font-color: white;
+    
     -fx-font-family: "Segoe Print";
-    -fx-base: blueviolet;
+    -fx-text-fill: white;
+}
+
+.bar{
+    -fx-text-fill: white;
+    -fx-background-color: blue;
+    -fx-font-family: "Segoe Print";
 }

@@ -1,0 +1,2 @@
+1. use image editor to manipulate individual slideshow images
+2. get the component to edit from the main's global upon creation of editor

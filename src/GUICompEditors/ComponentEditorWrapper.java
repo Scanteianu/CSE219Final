@@ -38,6 +38,7 @@ public class ComponentEditorWrapper {
                     title="Add Text";
                     break;
                 
+                
             }
             
             Scene scene=new Scene(root);

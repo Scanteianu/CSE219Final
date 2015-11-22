@@ -6,44 +6,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse219finalproj.MainWindow">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1124.0" styleClass="grid" stylesheets="@mainwindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse219finalproj.MainWindow">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar BorderPane.alignment="CENTER" styleClass="bar">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="File" styleClass="bar">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
-                  <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Save As" />
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="Open" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Save" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Save As" styleClass="bar"/>
+              <MenuItem mnemonicParsing="false" text="Close" styleClass="bar"/>
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Edit" styleClass="bar">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Delete" styleClass="bar"/>
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Insert">
+            <Menu mnemonicParsing="false" text="Insert" styleClass="bar">
               <items>
-                <MenuItem mnemonicParsing="false" text="New page" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Heading" />
-                  <MenuItem mnemonicParsing="false" onAction="#insertParagraph" text="Paragraph" />
-                  <MenuItem mnemonicParsing="false" text="List" />
-                  <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image" />
-                  <MenuItem mnemonicParsing="false" text="Slideshow" />
-                  <MenuItem mnemonicParsing="false" text="Video" />
+                <MenuItem mnemonicParsing="false" text="New page" styleClass="bar"/>
+                  <SeparatorMenuItem mnemonicParsing="false" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Heading" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" onAction="#insertParagraph" text="Paragraph" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="List" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" onAction="#insertImg" text="Image" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Slideshow" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Video" styleClass="bar"/>
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="View">
+            <Menu mnemonicParsing="false" text="View" styleClass="bar">
               <items>
-                <MenuItem mnemonicParsing="false" text="Page Selector" />
-                  <MenuItem mnemonicParsing="false" text="Page Editor" />
+                <MenuItem mnemonicParsing="false" text="Page Selector" styleClass="bar"/>
+                  <MenuItem mnemonicParsing="false" text="Page Editor" styleClass="bar"/>
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Help" styleClass="bar">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" text="About" styleClass="bar"/>
             </items>
           </Menu>
         </menus>
@@ -57,7 +57,7 @@
       </MenuBar>
    </top>
    <left>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane styleClass="grid" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -68,12 +68,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text=" Title" />
+            <Label text=" Title" styleClass="label" />
             <TextField GridPane.columnIndex="1" />
-            <Label text="Author" GridPane.rowIndex="1" />
-            <Label text="Label" GridPane.rowIndex="2" />
+            <Label text="Author" GridPane.rowIndex="1" styleClass="label"/>
+            <Label text="Label" GridPane.rowIndex="2" styleClass="label" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"  />
          </children>
       </GridPane>
    </left>
