@@ -37,6 +37,14 @@ public class ComponentEditorWrapper {
                     root= FXMLLoader.load(getClass().getResource("ParagraphEditor.fxml"));
                     title="Add Text";
                     break;
+                case HEADING:
+                    root= FXMLLoader.load(getClass().getResource("HeadingEditor.fxml"));
+                    title="Add Text";
+                    break;
+                case VIDEO:
+                    //root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
+                    title="Add Text";
+                    break;
                 
                 
             }

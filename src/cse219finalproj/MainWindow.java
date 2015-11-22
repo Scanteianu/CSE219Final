@@ -38,6 +38,27 @@ public class MainWindow implements Initializable {
         ComponentEditorWrapper cer = new ComponentEditorWrapper();
         cer.make(CompType.PARAGRAPH);
     }
+    @FXML
+    private void insertHeading(ActionEvent event){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.make(CompType.HEADING);
+    }
+
+    @FXML
+    private void insertList(ActionEvent event){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.make(CompType.LIST);
+    }
+    @FXML
+    private void insertSlideshow(ActionEvent event){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.make(CompType.SLIDESHOW);
+    }
+    @FXML
+    private void insertVideo(ActionEvent event){
+        ComponentEditorWrapper cer = new ComponentEditorWrapper();
+        cer.make(CompType.VIDEO);
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
