@@ -39,11 +39,11 @@ public class ComponentEditorWrapper {
                     break;
                 case HEADING:
                     root= FXMLLoader.load(getClass().getResource("HeadingEditor.fxml"));
-                    title="Add Text";
+                    title="Add Heading";
                     break;
                 case VIDEO:
-                    //root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
-                    title="Add Text";
+                    root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
+                    title="Add Video";
                     break;
                 
                 
