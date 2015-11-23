@@ -45,6 +45,10 @@ public class ComponentEditorWrapper {
                     root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
                     title="Add Video";
                     break;
+                case LIST:
+                    root= FXMLLoader.load(getClass().getResource("ListEditor.fxml"));
+                    title="Add List";
+                    break;
                 
                 
             }
