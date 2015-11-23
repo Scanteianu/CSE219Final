@@ -190,14 +190,14 @@
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Open" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Save" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Save As" />
-                        <MenuItem mnemonicParsing="false" text="Export" />
+                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Export" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Close" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Edit">
                      <items>
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Edit Selected" />
-                        <MenuItem mnemonicParsing="false" text="Delete Selected" />
+                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Delete Selected" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Insert">
@@ -263,6 +263,18 @@
                      </graphic>
                      <tooltip>
                         <Tooltip text="Export Site" />
+                     </tooltip>
+                  </Button>
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ProgramImg/Exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                      <tooltip>
+                        <Tooltip text="Exit Program" />
                      </tooltip>
                   </Button>
                </children>
