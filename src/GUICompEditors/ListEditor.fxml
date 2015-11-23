@@ -24,8 +24,8 @@
                         <Button mnemonicParsing="false" text="Replace" />
                         <Button mnemonicParsing="false" text="Remove" />
                         <Pane prefHeight="65.0" prefWidth="83.0" />
-                        <Button mnemonicParsing="false" text="Save" />
-                        <Button mnemonicParsing="false" text="Cancel" />
+                        <Button mnemonicParsing="false" onAction="#okClicked" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
                      </children>
                   </HBox>
                </children>

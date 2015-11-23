@@ -16,14 +16,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import model.CompType;
 
 /**
  * FXML Controller class
  *
  * @author Dan
  */
-public class ListEditorController implements Initializable {
-    @FXML
+public class SlideShowEditorController implements Initializable {
+
+      @FXML
     private ListView<String> list;
 
     /**
@@ -33,13 +35,10 @@ public class ListEditorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         ArrayList<String> text = new ArrayList <String>();
-        text.add("Binary solo!");
-        text.add("0000001");
-        text.add("00000111");
-        text.add("0000001");
-        text.add("00000111");
-        text.add("one oh oh one");
-        text.add("robo-boogie");
+        text.add("Image: guitar.jpg Caption: The best instrument");
+        text.add("Image: ukulele.jpg Caption: For pansies, not enough strings");
+        text.add("Image: banjo.jpg Caption: More like \"Just no.\"");
+        text.add("Image: Bass.jpg Caption: Because you can't count to over 4.");
         ObservableList ol1=FXCollections.observableList(text);
         list.setItems(ol1);
         
@@ -50,5 +49,8 @@ public class ListEditorController implements Initializable {
     public void cancelClicked(ActionEvent e){
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
-    
+    public void addClicked(ActionEvent e){
+        ComponentEditorWrapper cew = new ComponentEditorWrapper();
+        cew.make(CompType.IMAGE);
+    }
 }

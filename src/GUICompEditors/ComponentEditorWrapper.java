@@ -49,6 +49,10 @@ public class ComponentEditorWrapper {
                     root= FXMLLoader.load(getClass().getResource("ListEditor.fxml"));
                     title="Add List";
                     break;
+                case SLIDESHOW:
+                    root= FXMLLoader.load(getClass().getResource("SlideShowEditor.fxml"));
+                    title="Add Slide Show";
+                    break;
                 
                 
             }
