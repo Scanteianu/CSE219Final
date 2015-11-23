@@ -85,7 +85,11 @@
                         <Image url="@../ProgramImg/Add.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            <tooltip>
+                   <Tooltip text="Add New Page" />
+               </tooltip> 
+            </Button>
             <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="40.0" styleClass="button" wrapText="true" GridPane.rowIndex="3">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
@@ -93,7 +97,11 @@
                         <Image url="@../ProgramImg/Remove.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <tooltip>
+                   <Tooltip text="Remove Current Page" />
+               </tooltip> 
+            </Button>
             <Button mnemonicParsing="false" styleClass="button" GridPane.rowIndex="7">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -101,7 +109,11 @@
                         <Image url="@../ProgramImg/edit.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <tooltip>
+                   <Tooltip text="Edit Selected Component" />
+               </tooltip> 
+            </Button>
             <Separator prefWidth="200.0" GridPane.rowIndex="4" />
             <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="44.0" styleClass="button" wrapText="true" GridPane.rowIndex="6">
                <graphic>
@@ -110,7 +122,12 @@
                         <Image url="@../ProgramImg/Add.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+                                     
+               </graphic>
+               <tooltip>
+                   <Tooltip text="Add Item" />
+               </tooltip> 
+            </Button>
             <Button alignment="CENTER" mnemonicParsing="false" styleClass="button" GridPane.rowIndex="8">
                <graphic>
                   <ImageView fitHeight="95.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -118,7 +135,11 @@
                         <Image url="@../ProgramImg/Remove.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <tooltip>
+                   <Tooltip text="Remove Item" />
+               </tooltip> 
+            </Button>
             <Label text="Page Controls" />
             <Label text="Item Controls" GridPane.rowIndex="5" />
          </children>
@@ -204,6 +225,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                      <tooltip>
+                        <Tooltip text="New Site" />
+                     </tooltip>                     
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="50.0">
                      <graphic>
@@ -213,6 +237,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                      <tooltip>
+                        <Tooltip text="Open File" />
+                     </tooltip>                     
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="43.0">
                      <graphic>
@@ -222,6 +249,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                      <tooltip>
+                        <Tooltip text="Save Site" />
+                     </tooltip>
                   </Button>
                   <Button mnemonicParsing="false">
                      <graphic>
@@ -231,6 +261,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Export Site" />
+                     </tooltip>
                   </Button>
                </children>
             </HBox>

@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 5, 2015, 11:10:20 PM
+    Author     : Dan
+*/
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+body {
+    background-color: rgb(200, 200, 200);
+}
+table.nav{
+    
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    font-family: "Gloria Hallelujah";
+    background-color: rgb(230,230,230);
+    
+}
+a.nav{
+    color: rgb(0,0,0);
+    font-size: 18;
+}
+a.inlineRef{
+    color: rgb(0,0,0);
+}
+p.caption{
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    color: rgb(0,0,0);
+    font-family: "Gloria Hallelujah";
+}
+p.paragraph{
+    text-align: left;
+    font-size: 18;
+    font-family: "Gloria Hallelujah";
+    color: rgb(0,0,0);
+}
+p.list{
+    text-align: left;
+    font-size: 18;
+    font-family: "Gloria Hallelujah";
+    color: rgb(0,0,0);
+}
+ul.list{
+    color: rgb(0,0,0);
+    font-size: 18;
+    font-family: "Gloria Hallelujah";
+}
+p.heading{
+    text-align: left;
+    font-size: 24;
+    font-family: "Gloria Hallelujah";
+    color: rgb(0,0,0);
+}
+p.caption{
+    
+}
+div.central{
+    text-align: center;
+    font-size: 12;
+    font-family: "Gloria Hallelujah";
+}
+h1.banner{
+    text-align: left;
+    font-size: 36;
+    font-family: "Gloria Hallelujah";
+    color: rgb(0,0,0);
+    margin-bottom: 0px;
+}
+h2.banner{
+    text-align: left;
+    font-size: 16;
+    font-family: "Gloria Hallelujah";
+    color: rgb(0,0,0);
+    margin-top: 0px;
+}
