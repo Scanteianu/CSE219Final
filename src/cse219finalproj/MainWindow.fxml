@@ -21,7 +21,8 @@
           </Menu>
           <Menu mnemonicParsing="false" styleClass="bar" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" styleClass="bar" text="Delete" />
+              <MenuItem mnemonicParsing="false" styleClass="bar" text="Edit Selected" />
+                  <MenuItem mnemonicParsing="false" text="Delete Selected" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" styleClass="bar" text="Insert">
@@ -36,17 +37,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#insertVideo" styleClass="bar" text="Video" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" styleClass="bar" text="View">
-              <items>
-                <MenuItem mnemonicParsing="false" styleClass="bar" text="Page Selector" />
-                  <MenuItem mnemonicParsing="false" styleClass="bar" text="Page Editor" />
-              </items>
-            </Menu>
-          <Menu mnemonicParsing="false" styleClass="bar" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" styleClass="bar" text="About" />
-            </items>
-          </Menu>
         </menus>
          <contextMenu>
             <ContextMenu>
@@ -156,7 +146,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <WebView layoutX="2.0" layoutY="-3.0" prefHeight="701.0" prefWidth="858.0" />
+                        <WebView fx:id="webview" layoutX="2.0" layoutY="-3.0" prefHeight="701.0" prefWidth="858.0" />
                      </children>
                   </AnchorPane>
             </content>
