@@ -7,11 +7,15 @@ package cse219finalproj;
 
 import GUICompEditors.ComponentEditorWrapper;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import model.CompType;
 
 /**
@@ -19,6 +23,9 @@ import model.CompType;
  * @author Dan
  */
 public class MainWindow implements Initializable {
+    
+    @FXML
+    private ListView<String> list;
     
     @FXML
     private Label label;
@@ -61,7 +68,20 @@ public class MainWindow implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ArrayList<String> text = new ArrayList <String>();
+        text.add("Heading: Hello World");
+        text.add("Image: penguin.jpg");
+        text.add("Paragraph: Welcome to my igloo. I hope you have a good time\n"
+                + "Mi casa es su casa, mi comida es su comida\n"
+                + "we like to party");
+        text.add("Video: Mambo Number 5.mp4");
+        text.add("Slideshow: vanilla ice.jpg, shaggy.jpg, "
+                + "daddy yankee.jpg");
+        text.add("heading: Muppets band");
+        text.add("list:\nrobo-boogie\nDr.Teeth\nFloyd Pepper\nAnimal");
+        ObservableList ol1=FXCollections.observableList(text);
+        list.setItems(ol1);
+        
     }    
     
 }
