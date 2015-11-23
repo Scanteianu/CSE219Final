@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1201.0" styleClass="grid" stylesheets="@mainwindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse219finalproj.MainWindow">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1447.0" styleClass="grid" stylesheets="@mainwindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse219finalproj.MainWindow">
    <left>
       <GridPane styleClass="grid" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -152,9 +152,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <VBox layoutY="6.0" prefHeight="692.0" prefWidth="841.0">
+                        <VBox layoutY="6.0" prefHeight="692.0" prefWidth="1078.0">
                            <children>
-                              <ListView fx:id="list" prefHeight="647.0" prefWidth="841.0" />
+                              <ListView fx:id="list" prefHeight="647.0" prefWidth="1082.0" />
                            </children>
                         </VBox>
                      </children>
@@ -165,7 +165,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <WebView fx:id="webview" layoutX="2.0" layoutY="-3.0" prefHeight="701.0" prefWidth="858.0" />
+                        <WebView fx:id="webview" layoutX="2.0" layoutY="-3.0" prefHeight="701.0" prefWidth="1074.0" />
                      </children>
                   </AnchorPane>
             </content>
