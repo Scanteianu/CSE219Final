@@ -243,9 +243,9 @@ public class MainWindow implements Initializable {
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
         authorField.setOnKeyReleased(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
         footerArea.setOnKeyReleased(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
-        layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));});
-        colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));});
-        fontBox.setOnAction(e->{CSE219FinalProj.currentSite.setFont(SiteFont.getValueByName((String)fontBox.getValue()));});
+        layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));CSE219FinalProj.isSaved=false;});
+        colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));CSE219FinalProj.isSaved=false;});
+        fontBox.setOnAction(e->{CSE219FinalProj.currentSite.setFont(SiteFont.getValueByName((String)fontBox.getValue()));CSE219FinalProj.isSaved=false;});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  

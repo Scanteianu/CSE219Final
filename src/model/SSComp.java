@@ -14,15 +14,17 @@ import java.util.ArrayList;
 public class SSComp implements PageComponent
 {
     private String name;
-    private CompType type;
-    private ArrayList<String> captions;
-    private ArrayList<String> fileNames;
-    private ArrayList<String> fileLocations;
+    private final CompType type=CompType.SLIDESHOW;
+    private ArrayList<ImageComp> images = new ArrayList<>();
     private int sizeX=480;
     private int sizeY=640;
     @Override
     public String toString(){
-        return "Slideshow";
+        String s="Slideshow: note - all images will be center aligned on Website.\n";
+        for(ImageComp ic:images){
+            s+=ic.toString()+"\n";
+        }
+        return s;
     }
     public String getName() {
         return name;
@@ -36,34 +38,7 @@ public class SSComp implements PageComponent
         return type;
     }
 
-    public void setType(CompType type) {
-        this.type = type;
-    }
-
-    public ArrayList<String> getCaptions() {
-        return captions;
-    }
-
-    public void setCaptions(ArrayList<String> captions) {
-        this.captions = captions;
-    }
-
-    public ArrayList<String> getFileNames() {
-        return fileNames;
-    }
-
-    public void setFileNames(ArrayList<String> fileNames) {
-        this.fileNames = fileNames;
-    }
-
-    public ArrayList<String> getFileLocations() {
-        return fileLocations;
-    }
-
-    public void setFileLocations(ArrayList<String> fileLocations) {
-        this.fileLocations = fileLocations;
-    }
-
+  
     @Override
     public String toHTML() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
