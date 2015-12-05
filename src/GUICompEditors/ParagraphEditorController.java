@@ -40,6 +40,7 @@ public class ParagraphEditorController implements Initializable {
         // TODO
         tc=(TextComp)CSE219FinalProj.currentComponent;
         isEdit=CSE219FinalProj.isEdit;
+        text.setText(tc.getText());
     }    
      public void okClicked(ActionEvent e){
          tc.setText(text.getText());

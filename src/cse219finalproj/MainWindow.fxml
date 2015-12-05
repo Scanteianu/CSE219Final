@@ -127,7 +127,7 @@
                    <Tooltip text="Add Item" />
                </tooltip> 
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" styleClass="button" GridPane.rowIndex="8">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#removeComp" styleClass="button" GridPane.rowIndex="8">
                <graphic>
                   <ImageView fitHeight="95.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -197,7 +197,7 @@
                   <Menu mnemonicParsing="false" styleClass="bar" text="Edit">
                      <items>
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Edit Selected" />
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Delete Selected" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeComp" styleClass="bar" text="Delete Selected" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#removePage" text="Delete Current Page" />
                      </items>

@@ -65,6 +65,15 @@ public class MainWindow implements Initializable {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
+    @FXML
+    private void removeComp(ActionEvent event) {
+        if(list.getSelectionModel().getSelectedIndex()!=-1){
+        CSE219FinalProj.currentPage.getComponents().remove(list.getSelectionModel().getSelectedIndex());
+        this.updateInformation();}
+        else{
+            Messages.ErrorMessage("A component must be selected for deletion.");
+        }
+    }
      @FXML
     private void insertImg(ActionEvent event) {
           ComponentEditorWrapper cer = new ComponentEditorWrapper();
@@ -178,6 +187,7 @@ public class MainWindow implements Initializable {
                 DebugPrint.println("focus changed-oof: "+CSE219FinalProj.currentPage.getTitle());
                 updateInformation();
                 titleIsEdit=false;
+                
                 }
                 else{
                     titleField.setText(CSE219FinalProj.currentPage.getTitle());

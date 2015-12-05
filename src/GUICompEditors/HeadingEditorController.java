@@ -6,6 +6,7 @@
 package GUICompEditors;
 
 import cse219finalproj.CSE219FinalProj;
+import cse219finalproj.DebugPrint;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -32,6 +33,8 @@ public class HeadingEditorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tc=(TextComp)CSE219FinalProj.currentComponent;
+        DebugPrint.println("home-txt"+tc.getText());
+        text.setText(tc.getText());
         isEdit=CSE219FinalProj.isEdit;
     }    
       public void okClicked(ActionEvent e){
