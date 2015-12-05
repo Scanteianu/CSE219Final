@@ -74,7 +74,7 @@
             <VBox prefHeight="87.0" prefWidth="111.0" styleClass="hbox" GridPane.rowIndex="1">
                <children>
                   <Label text="Select:" />
-                  <ComboBox prefWidth="150.0" />
+                  <ComboBox fx:id="pageBox" prefWidth="150.0" />
                </children>
             </VBox>
             <Button mnemonicParsing="false" styleClass="button" wrapText="true" GridPane.rowIndex="2">
