@@ -18,8 +18,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import model.CompType;
@@ -35,7 +38,18 @@ public class MainWindow implements Initializable {
     
     @FXML
     private Label label;
-    
+     @FXML
+    private TextField titleField;
+    @FXML
+    private TextField authorField;
+    @FXML
+    private TextArea footerArea;
+    @FXML
+    private ComboBox layoutBox;
+    @FXML 
+    private ComboBox colorBox;
+    @FXML 
+    private ComboBox fontBox;
     @FXML
     private WebView webview;
     
@@ -75,8 +89,12 @@ public class MainWindow implements Initializable {
         ComponentEditorWrapper cer = new ComponentEditorWrapper();
         cer.make(CompType.VIDEO);
     }
+    public void updateInformation(){
+        
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        CSE219FinalProj.window= this;
         ArrayList<String> text = new ArrayList <String>();
         text.add("Heading: Hello World");
         text.add("Image: penguin.jpg");

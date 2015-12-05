@@ -45,4 +45,6 @@ public class CSE219FinalProj extends Application {
     public static PageComponent currentComponent;
     public static Page currentPage;
     public static Site currentSite;
+    public static boolean isEdit;
+    public static MainWindow window;
 }
