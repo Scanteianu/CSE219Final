@@ -37,7 +37,7 @@ import model.PageComponent;
  * @author Dan
  */
 public class MainWindow implements Initializable {
-    
+    private boolean titleIsEdit=false;
     @FXML
     private ListView<String> list;
     
@@ -109,12 +109,12 @@ public class MainWindow implements Initializable {
         Page p = new Page();
         CSE219FinalProj.currentSite.getPages().remove(CSE219FinalProj.currentPage);
         if(CSE219FinalProj.currentSite.getPages().isEmpty()){
-            pageBox.setVisibleRowCount(1);
+            //pageBox.setVisibleRowCount(1);
             insertPage(null);
         }
         else{
             CSE219FinalProj.currentPage=CSE219FinalProj.currentSite.getPages().get(0);
-            pageBox.setVisibleRowCount(CSE219FinalProj.currentSite.getPages().size());
+            //pageBox.setVisibleRowCount(CSE219FinalProj.currentSite.getPages().size());
             this.updateInformation();
         
         }
@@ -126,7 +126,9 @@ public class MainWindow implements Initializable {
     }
     @FXML
     private void switchPage(ActionEvent event){
-        Page p = new Page();
+        if(!titleIsEdit)//reentrantLock type thing
+        {Page p = new Page();
+        DebugPrint.println("SwitchPage");
         p.setTitle((String)pageBox.getValue());
         for(Page p1:CSE219FinalProj.currentSite.getPages()){
             if(p1.getTitle().equals(pageBox.getValue()))
@@ -135,6 +137,7 @@ public class MainWindow implements Initializable {
         //CSE219FinalProj.currentSite.getPages().add(p);
         CSE219FinalProj.currentPage=p;
         this.updateInformation();
+        }
     }
     public void updateInformation(){
         ArrayList<String> comptext = new ArrayList <String>();
@@ -150,6 +153,7 @@ public class MainWindow implements Initializable {
         }
         ObservableList ol2=FXCollections.observableList(pages);
         pageBox.setItems(ol2);
+        DebugPrint.println("updating page: "+CSE219FinalProj.currentPage.getTitle());
         pageBox.setValue(CSE219FinalProj.currentPage.getTitle());
         titleField.setText(CSE219FinalProj.currentPage.getTitle());
         authorField.setText(CSE219FinalProj.currentSite.getAuthor());
@@ -163,12 +167,22 @@ public class MainWindow implements Initializable {
         ObservableList ol2=FXCollections.observableArrayList(Layout.getPossibilities());
         layoutBox.setItems(ol2);
         //titleField.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());});
-        titleField.textProperty().addListener(new ChangeListener<String>() {
+        titleField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
-            public void changed(ObservableValue<? extends String> observable,
-                    String oldValue, String newValue) {
-
-                CSE219FinalProj.currentPage.setTitle(titleField.getText());updateInformation();
+            public void changed(ObservableValue<? extends Boolean> observable,
+                    Boolean oldValue, Boolean newValue) {
+                if(!newValue)
+                {
+                titleIsEdit=true;
+                CSE219FinalProj.currentPage.setTitle(titleField.getText());
+                DebugPrint.println("focus changed-oof: "+CSE219FinalProj.currentPage.getTitle());
+                updateInformation();
+                titleIsEdit=false;
+                }
+                else{
+                    titleField.setText(CSE219FinalProj.currentPage.getTitle());
+                    DebugPrint.println("focus changed-if: "+CSE219FinalProj.currentPage.getTitle());
+                }
             }
         });
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
