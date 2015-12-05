@@ -174,6 +174,7 @@ public class MainWindow implements Initializable {
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
         authorField.setOnKeyTyped(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
         footerArea.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
+        layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
