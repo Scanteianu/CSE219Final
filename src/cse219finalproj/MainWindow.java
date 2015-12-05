@@ -46,6 +46,8 @@ public class MainWindow implements Initializable {
     
     @FXML
     private Label label;
+    @FXML
+    private Label bannerLabel;
      @FXML
     private TextField titleField;
     @FXML
@@ -71,8 +73,21 @@ public class MainWindow implements Initializable {
     @FXML
     private void selectBanner(ActionEvent event) {
         FileChooser jfc= new FileChooser();
+        try{
         File banner=jfc.showOpenDialog(null).getAbsoluteFile();
-        //CSE219FinalProj.currentSite.
+        if(!banner.getName().toLowerCase().endsWith(".jpg")&&!banner.getName().toLowerCase().endsWith(".jpeg")&&!banner.getName().toLowerCase().endsWith(".png")&&!banner.getName().toLowerCase().endsWith(".bmp")&&!banner.getName().toLowerCase().endsWith(".gif"))
+        {
+            Messages.ErrorMessage("That's an invalid file type. We support JPEGs, GIFs,PNGs, and BMPs.");
+            return;
+        }
+            CSE219FinalProj.currentPage.setBannerFilePath(banner.getPath());
+            CSE219FinalProj.currentPage.setBannerFilename(banner.getName());
+            updateInformation();
+        }
+        catch(NullPointerException e){
+            
+        }
+        
         
     }
     @FXML
@@ -192,6 +207,7 @@ public class MainWindow implements Initializable {
         titleField.setText(CSE219FinalProj.currentPage.getTitle());
         authorField.setText(CSE219FinalProj.currentSite.getAuthor());
         footerArea.setText(CSE219FinalProj.currentPage.getFooter());
+        bannerLabel.setText("Banner\n"+CSE219FinalProj.currentPage.getBannerFilename());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
