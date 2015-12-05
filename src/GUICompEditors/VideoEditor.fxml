@@ -22,7 +22,7 @@
           <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextArea prefHeight="95.0" prefWidth="431.0" styleClass="mainFxmlClass" text="Type your caption here......" GridPane.rowIndex="1">
+            <TextArea fx:id="ta" prefHeight="95.0" prefWidth="431.0" styleClass="mainFxmlClass" text="Type your caption here......" GridPane.rowIndex="1">
                <padding>
                  
                </padding></TextArea>
@@ -37,7 +37,7 @@
                      </Button>
                </children>
             </HBox>
-            <Label styleClass="label" text="No File Selected" />
+            <Label fx:id="label" styleClass="label" text="No File Selected" />
          </children>
       </GridPane>
    </children>

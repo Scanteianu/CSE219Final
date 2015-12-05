@@ -14,8 +14,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.CompType;
+import model.ListComp;
 import model.PageComponent;
 import model.TextComp;
+import model.VideoComp;
 
 /**
  *
@@ -55,10 +57,15 @@ public class ComponentEditorWrapper {
                     title="Add Heading";
                     break;
                 case VIDEO:
-                    root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
+                    VideoComp vc = new VideoComp();
+                    vc.setCaption("Enter caption here.");
+                    CSE219FinalProj.currentComponent=vc;
                     title="Add Video";
+                    root= FXMLLoader.load(getClass().getResource("VideoEditor.fxml"));
                     break;
                 case LIST:
+                    ListComp lc = new ListComp();
+                    CSE219FinalProj.currentComponent=lc;
                     root= FXMLLoader.load(getClass().getResource("ListEditor.fxml"));
                     title="Add List";
                     break;

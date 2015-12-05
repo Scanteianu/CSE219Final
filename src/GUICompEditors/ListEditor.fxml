@@ -14,16 +14,18 @@
    <children>
       <VBox layoutX="16.0" layoutY="17.0" prefHeight="371.0" prefWidth="571.0" styleClass="hbox">
          <children>
-            <ListView id="ListView" fx:id="list" prefHeight="231.0" prefWidth="571.0" />
-            <TextField />
+            <ListView id="ListView" fx:id="lv" prefHeight="231.0" prefWidth="571.0" />
+            <TextField fx:id="tf" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <HBox prefHeight="51.0" prefWidth="571.0" styleClass="hbox">
                      <children>
-                        <Button mnemonicParsing="false" text="Add to End" />
-                        <Button mnemonicParsing="false" text="Replace" />
-                        <Button mnemonicParsing="false" text="Remove" />
-                        <Pane prefHeight="65.0" prefWidth="83.0" />
+                        <Button mnemonicParsing="false" onAction="#addClicked" text="Add to End" />
+                        <Button mnemonicParsing="false" onAction="#replaceClicked" text="Replace" />
+                        <Button mnemonicParsing="false" onAction="#removeClicked" text="Remove" />
+                        <Pane layoutX="364.0" layoutY="20.0" prefHeight="68.0" prefWidth="42.0" />
+                        <Button mnemonicParsing="false" onAction="#linkClicked" text="Link!" />
+                        <Pane prefHeight="68.0" prefWidth="27.0" />
                         <Button mnemonicParsing="false" onAction="#okClicked" text="Save" />
                         <Button mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
                      </children>
