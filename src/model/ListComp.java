@@ -14,12 +14,15 @@ public class ListComp implements PageComponent {
     private CompType type;
     @Override
     public String toString(){
-        return "List: "+text.toArray(new String[1]).toString();
+        String returns ="List: \n";
+        for(String s: text)
+            returns+=s+"\n";
+        return returns;
     }
     public void setType(CompType type) {
         this.type = type;
     }
-    private ArrayList<String> text;
+    private ArrayList<String> text=new ArrayList<>();
 
     public ArrayList<String> getText() {
         return text;
