@@ -12,7 +12,10 @@ import java.util.ArrayList;
 public class ListComp implements PageComponent {
     private String name;
     private CompType type;
-
+    @Override
+    public String toString(){
+        return "List: "+text.toArray(new String[1]).toString();
+    }
     public void setType(CompType type) {
         this.type = type;
     }

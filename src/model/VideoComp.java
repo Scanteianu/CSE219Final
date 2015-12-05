@@ -17,7 +17,10 @@ public class VideoComp implements PageComponent{
     private int sizeX=480;
     private int sizeY=640;
     private final CompType type=CompType.VIDEO;
-
+    @Override
+    public String toString(){
+        return "Video: "+fileName+" Caption: "+ caption;
+    }
     public String getFileName() {
         return fileName;
     }

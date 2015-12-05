@@ -16,6 +16,11 @@ public class ImageComp implements PageComponent{
     private String fileName="";
     private int sizeX=480;
     private int sizeY=640;
+    private int floatNum =0;//-1 for l, 1 for r, 0 for neither.
+    @Override
+    public String toString(){
+        return "Image: "+fileName+" Caption: "+ caption;
+    }
     public String getFileName() {
         return fileName;
     }

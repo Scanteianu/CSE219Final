@@ -20,6 +20,10 @@ public class SSComp implements PageComponent
     private ArrayList<String> fileLocations;
     private int sizeX=480;
     private int sizeY=640;
+    @Override
+    public String toString(){
+        return "Slideshow";
+    }
     public String getName() {
         return name;
     }

@@ -10,7 +10,12 @@ package model;
 public class TextComp implements PageComponent {
     private String name;
     private CompType type;
-
+    @Override
+    public String toString(){
+        if(type==CompType.HEADING)
+            return "Heading: "+text;
+        return "Paragraph: "+text;
+    }
     public void setType(CompType type) {
         this.type = type;
     }
