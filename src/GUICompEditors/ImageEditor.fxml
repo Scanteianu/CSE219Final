@@ -24,11 +24,11 @@
           <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView id="imgView" fitHeight="262.0" fitWidth="416.0" pickOnBounds="true" preserveRatio="true" styleClass="mainFxmlClass">
+            <ImageView id="imgView" fx:id="view" fitHeight="262.0" fitWidth="416.0" pickOnBounds="true" preserveRatio="true" styleClass="mainFxmlClass">
                <image>
                   <Image url="@../ProgramImg/DefaultImg.jpg" />
                </image></ImageView>
-            <TextArea prefHeight="200.0" prefWidth="200.0" styleClass="mainFxmlClass" text="Type your caption here......" GridPane.rowIndex="1">
+            <TextArea fx:id="ta" prefHeight="200.0" prefWidth="200.0" styleClass="mainFxmlClass" text="Type your caption here......" GridPane.rowIndex="1">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding></TextArea>
@@ -36,7 +36,12 @@
                <children>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#select" styleClass="button" text="Select Image">
                      </Button>
-                  <Pane prefHeight="41.0" prefWidth="147.0" />
+                  <HBox prefHeight="42.0" prefWidth="161.0" styleClass="hbox">
+                     <children>
+                        <Label text="Align:" />
+                        <ComboBox fx:id="box" prefHeight="25.0" prefWidth="78.0" />
+                     </children>
+                  </HBox>
                   <Button id="button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#okClicked" styleClass="button" text="OK">
                    </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelClicked" styleClass="button" text="Cancel">

@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.CompType;
+import model.ImageComp;
 import model.ListComp;
 import model.PageComponent;
 import model.TextComp;
@@ -36,6 +37,8 @@ public class ComponentEditorWrapper {
             Parent root=null;
             switch(type){
                 case IMAGE:
+                    ImageComp ic=new ImageComp();
+                    CSE219FinalProj.currentComponent=ic;
                     root= FXMLLoader.load(getClass().getResource("ImageEditor.fxml"));
                     title="Add Image";
                     break;

@@ -14,12 +14,43 @@ public class ImageComp implements PageComponent{
     private String caption="";
     private String fileLocation="";
     private String fileName="";
+
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public void setSizeX(int sizeX) {
+        this.sizeX = sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
+    public void setSizeY(int sizeY) {
+        this.sizeY = sizeY;
+    }
+
+    public int getFloatNum() {
+        return floatNum;
+    }
+
+    public void setFloatNum(int floatNum) {
+        this.floatNum = floatNum;
+    }
     private int sizeX=480;
     private int sizeY=640;
     private int floatNum =0;//-1 for l, 1 for r, 0 for neither.
     @Override
     public String toString(){
-        return "Image: "+fileName+" Caption: "+ caption;
+        String align=" //center aligned.";
+        if(floatNum<0){
+            align=" //left aligned.";
+        }
+        if(floatNum>0){
+            align=" //right aligned.";
+        }
+        return "Image: "+fileName+" Caption: "+ caption+align;
     }
     public String getFileName() {
         return fileName;
