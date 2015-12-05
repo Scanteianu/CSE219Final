@@ -38,5 +38,23 @@ public class Page {
     }
     private ArrayList<PageComponent> components= new ArrayList<PageComponent>();
     private String title = "New Page";
+
+    public String getBannerFilename() {
+        return bannerFilename;
+    }
+
+    public void setBannerFilename(String bannerFilename) {
+        this.bannerFilename = bannerFilename;
+    }
+
+    public String getBannerFilePath() {
+        return bannerFilePath;
+    }
+
+    public void setBannerFilePath(String bannerFilePath) {
+        this.bannerFilePath = bannerFilePath;
+    }
+    private String bannerFilename="";
+    private String bannerFilePath="";
     private String footer="";
 }
