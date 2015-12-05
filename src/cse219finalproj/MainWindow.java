@@ -26,6 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import model.CompType;
+import model.Layout;
 import model.PageComponent;
 
 /**
@@ -91,20 +92,27 @@ public class MainWindow implements Initializable {
         cer.make(CompType.VIDEO);
     }
     public void updateInformation(){
-        ArrayList<String> text = new ArrayList <String>();
+        ArrayList<String> comptext = new ArrayList <String>();
         for(PageComponent pc: CSE219FinalProj.currentPage.getComponents()){
-            text.add(pc.toString());
+            comptext.add(pc.toString());
         }
-        ObservableList ol1=FXCollections.observableList(text);
+        ObservableList ol1=FXCollections.observableList(comptext);
         list.setItems(ol1);
+        layoutBox.setValue(CSE219FinalProj.currentSite.getLayout().getName());
+        titleField.setText(CSE219FinalProj.currentPage.getTitle());
+        authorField.setText(CSE219FinalProj.currentSite.getAuthor());
+        footerArea.setText(CSE219FinalProj.currentPage.getFooter());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         CSE219FinalProj.window= this;
+        
+        
+        ObservableList ol2=FXCollections.observableArrayList(Layout.getPossibilities());
+        layoutBox.setItems(ol2);
+        
+        
         updateInformation();
-        titleField.setText(CSE219FinalProj.currentPage.getTitle());
-        authorField.setText(CSE219FinalProj.currentSite.getAuthor());
-        footerArea.setText(CSE219FinalProj.currentPage.getFooter());
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
         File file =  new File("FreeGuitarWebsite/pages/home.html");

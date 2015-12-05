@@ -48,6 +48,6 @@ public class Site {
     private ArrayList<Page> pages = new ArrayList<Page>();
     private String name="";
     private String author="";
-    private Layout layout;
+    private Layout layout=Layout.MIDDLE_BANNER;
     
 }
