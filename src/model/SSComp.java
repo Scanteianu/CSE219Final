@@ -15,6 +15,30 @@ public class SSComp implements PageComponent
 {
     private String name;
     private final CompType type=CompType.SLIDESHOW;
+
+    public ArrayList<ImageComp> getImages() {
+        return images;
+    }
+
+    public void setImages(ArrayList<ImageComp> images) {
+        this.images = images;
+    }
+
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public void setSizeX(int sizeX) {
+        this.sizeX = sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
+    public void setSizeY(int sizeY) {
+        this.sizeY = sizeY;
+    }
     private ArrayList<ImageComp> images = new ArrayList<>();
     private int sizeX=480;
     private int sizeY=640;

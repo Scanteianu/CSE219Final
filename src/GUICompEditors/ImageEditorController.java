@@ -13,8 +13,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,7 +26,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.ImageComp;
-import model.Layout;
+import model.ImageCompWrap;
+import model.SSComp;
 
 /**
  * FXML Controller class
@@ -41,7 +40,9 @@ public class ImageEditorController implements Initializable {
      * Initializes the controller class.
      */
     boolean isEdit=CSE219FinalProj.isEdit;
-    ImageComp ic=(ImageComp)CSE219FinalProj.currentComponent;
+    ImageComp ic;
+    SSComp ss=null;
+    ImageCompWrap icw=null;
     ArrayList<String> options=new ArrayList<>();
         
         ObservableList ol;
@@ -50,6 +51,15 @@ public class ImageEditorController implements Initializable {
     @FXML TextArea ta;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if(CSE219FinalProj.sscomp!=null){
+            icw=CSE219FinalProj.sscomp;
+            CSE219FinalProj.sscomp=null;
+            isEdit=icw.isEdit;
+            ss=icw.ssc;
+            ic=icw.ic;
+        }
+        else
+            ic=(ImageComp)CSE219FinalProj.currentComponent;
         options.add("Left");
         options.add("Middle");
         options.add("Right");
@@ -70,9 +80,16 @@ public class ImageEditorController implements Initializable {
     public void okClicked(ActionEvent e){
         ic.setCaption(ta.getText());
         ic.setFloatNum(ol.indexOf(box.getValue())-1);
+        if(ss==null){
          if(!isEdit)
              CSE219FinalProj.currentPage.getComponents().add(ic);
           CSE219FinalProj.window.updateInformation();
+        }
+        else{
+            if(!isEdit)
+             ss.getImages().add(ic);
+          icw.sse.refresh();
+        }
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
     public void cancelClicked(ActionEvent e){

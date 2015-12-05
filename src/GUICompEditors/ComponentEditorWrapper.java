@@ -17,6 +17,7 @@ import model.CompType;
 import model.ImageComp;
 import model.ListComp;
 import model.PageComponent;
+import model.SSComp;
 import model.TextComp;
 import model.VideoComp;
 
@@ -73,6 +74,8 @@ public class ComponentEditorWrapper {
                     title="Add List";
                     break;
                 case SLIDESHOW:
+                    SSComp ss=new SSComp();
+                    CSE219FinalProj.currentComponent=ss;
                     root= FXMLLoader.load(getClass().getResource("SlideShowEditor.fxml"));
                     title="Add Slide Show";
                     break;

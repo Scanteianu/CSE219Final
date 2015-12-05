@@ -5,6 +5,7 @@
  */
 package GUICompEditors;
 
+import cse219finalproj.CSE219FinalProj;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -17,6 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.CompType;
+import model.ImageComp;
+import model.ImageCompWrap;
+import model.SSComp;
 
 /**
  * FXML Controller class
@@ -25,6 +29,8 @@ import model.CompType;
  */
 public class SlideShowEditorController implements Initializable {
 
+    SSComp ss=(SSComp) CSE219FinalProj.currentComponent;
+    boolean isEdit = CSE219FinalProj.isEdit;
       @FXML
     private ListView<String> list;
 
@@ -34,13 +40,7 @@ public class SlideShowEditorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        ArrayList<String> text = new ArrayList <String>();
-        text.add("Image: guitar.jpg Caption: The best instrument");
-        text.add("Image: ukulele.jpg Caption: For pansies, not enough strings");
-        text.add("Image: banjo.jpg Caption: More like \"Just no.\"");
-        text.add("Image: Bass.jpg Caption: Because you can't count to over 4.");
-        ObservableList ol1=FXCollections.observableList(text);
-        list.setItems(ol1);
+        refresh();
         
     }    
      public void okClicked(ActionEvent e){
@@ -49,7 +49,21 @@ public class SlideShowEditorController implements Initializable {
     public void cancelClicked(ActionEvent e){
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
+    public void refresh(){
+        ArrayList<String> text = new ArrayList <String>();
+        for(ImageComp i: ss.getImages()){
+            text.add(i.toString());
+        }
+        ObservableList ol1=FXCollections.observableList(text);
+        list.setItems(ol1);
+    }
     public void addClicked(ActionEvent e){
+        ImageCompWrap nc = new ImageCompWrap();
+        CSE219FinalProj.sscomp=nc;
+        nc.isEdit=false;
+        nc.sse=this;
+        nc.ssc=ss;
+        nc.ic=new ImageComp();
         ComponentEditorWrapper cew = new ComponentEditorWrapper();
         cew.make(CompType.IMAGE);
     }
