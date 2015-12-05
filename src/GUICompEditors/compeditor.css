@@ -10,24 +10,24 @@
     -fx-background-color: darkblue;
 }
 .button{
-    -fx-padding: 10 10 10 10 10;
+    -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     -fx-background-color: lightsteelblue;
     -fx-font-family: "Segoe Print";
 }
 .grid{
-     -fx-padding: 10 10 10 10 10;
+     -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     
     margin: 10px;
     -fx-background-color: darkblue;
 }
 .hbox{
-     -fx-padding: 10 10 10 10 10;
+     -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     
     margin: 10px;
     -fx-background-color: darkblue;

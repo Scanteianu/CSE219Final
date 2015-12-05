@@ -10,25 +10,25 @@
     -fx-background-color: darkblue;
 }
 .button{
-    -fx-padding: 10 10 10 10 10;
+    -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     -fx-background-color: lightsteelblue;
     -fx-font-family: "Segoe Print";
     -fx-alignment: CENTER;
 }
 .grid{
-     -fx-padding: 10 10 10 10 10;
+     -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     -fx-halignment: center;
     margin: 10px;
     -fx-background-color: darkblue;
 }
 .hbox{
-     -fx-padding: 10 10 10 10 10;
+     -fx-padding: 10;
     -fx-alignment: CENTER;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
     
     margin: 10px;
     -fx-background-color: darkblue;
@@ -43,7 +43,7 @@
 .filebar{
       -fx-padding: 3 10 3 5;
     -fx-alignment: CENTER_LEFT;
-    -fx-spacing: 10 10 10 10;
+    -fx-spacing: 10;
      -fx-text-fill: white;
     -fx-background-color: blue;
     -fx-font-family: "Segoe Print";
