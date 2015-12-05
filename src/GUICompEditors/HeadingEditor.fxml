@@ -7,18 +7,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="127.0" prefWidth="559.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="GUICompEditors.HeadingEditorController">
+<AnchorPane id="AnchorPane" prefHeight="127.0" prefWidth="559.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUICompEditors.HeadingEditorController">
     <stylesheets>
         <URL value="@compeditor.css" />
     </stylesheets>
    <children>
       <VBox layoutX="3.0" layoutY="3.0" prefHeight="104.0" prefWidth="579.0" styleClass="hbox">
          <children>
-            <TextField text="Insert Heading Text Here" />
+            <TextField fx:id="text" text="Insert Heading Text Here" />
             <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox">
                <children>
-                  <Button mnemonicParsing="false" onAction="#okClicked" text="Ok" styleClass="button" />
-                  <Button mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" styleClass="button" />
+                  <Button mnemonicParsing="false" onAction="#okClicked" styleClass="button" text="Ok" />
+                  <Button mnemonicParsing="false" onAction="#cancelClicked" styleClass="button" text="Cancel" />
                </children>
             </HBox>
          </children>

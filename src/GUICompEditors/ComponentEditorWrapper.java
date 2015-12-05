@@ -41,10 +41,15 @@ public class ComponentEditorWrapper {
                     title="Add Text";
                     TextComp tc =new TextComp();
                     tc.setType(CompType.PARAGRAPH);
+                    tc.setText("Type your text here.");
                     CSE219FinalProj.currentComponent=tc;
                     root= FXMLLoader.load(getClass().getResource("ParagraphEditor.fxml"));
                     break;
                 case HEADING:
+                    TextComp tc1 =new TextComp();
+                    tc1.setType(CompType.HEADING);
+                    CSE219FinalProj.currentComponent=tc1;
+                    tc1.setText("Type your heading here.");
                     root= FXMLLoader.load(getClass().getResource("HeadingEditor.fxml"));
                     title="Add Heading";
                     break;
