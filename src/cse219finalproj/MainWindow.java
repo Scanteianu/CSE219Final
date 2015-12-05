@@ -104,6 +104,21 @@ public class MainWindow implements Initializable {
         this.updateInformation();
     }
     @FXML
+    private void removePage(ActionEvent event){
+        Page p = new Page();
+        CSE219FinalProj.currentSite.getPages().remove(CSE219FinalProj.currentPage);
+        if(CSE219FinalProj.currentSite.getPages().isEmpty()){
+            pageBox.setVisibleRowCount(1);
+            insertPage(null);
+        }
+        else{
+            CSE219FinalProj.currentPage=CSE219FinalProj.currentSite.getPages().get(0);
+            pageBox.setVisibleRowCount(CSE219FinalProj.currentSite.getPages().size());
+            this.updateInformation();
+        
+        }
+    }
+    @FXML
     private void refresh(ActionEvent event){
         updateInformation();
     }

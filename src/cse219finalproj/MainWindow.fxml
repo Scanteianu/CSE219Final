@@ -89,7 +89,7 @@
                    <Tooltip text="Add New Page" />
                </tooltip> 
             </Button>
-            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="40.0" styleClass="button" wrapText="true" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" onAction="#removePage" prefHeight="38.0" prefWidth="40.0" styleClass="button" wrapText="true" GridPane.rowIndex="3">
                <graphic>
                   <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -198,6 +198,8 @@
                      <items>
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Edit Selected" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Delete Selected" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#removePage" text="Delete Current Page" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Insert">
