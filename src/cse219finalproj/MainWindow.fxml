@@ -74,10 +74,10 @@
             <VBox prefHeight="87.0" prefWidth="111.0" styleClass="hbox" GridPane.rowIndex="1">
                <children>
                   <Label text="Select:" />
-                  <ComboBox fx:id="pageBox" prefWidth="150.0" />
+                  <ComboBox fx:id="pageBox" onAction="#switchPage" prefWidth="150.0" />
                </children>
             </VBox>
-            <Button mnemonicParsing="false" styleClass="button" wrapText="true" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#insertPage" styleClass="button" wrapText="true" GridPane.rowIndex="2">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -186,6 +186,7 @@
                <menus>
                   <Menu mnemonicParsing="false" styleClass="bar" text="File">
                      <items>
+                        <MenuItem mnemonicParsing="false" text="New Site" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Open" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Save" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Save As" />
@@ -201,7 +202,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Insert">
                      <items>
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="New page" />
+                        <MenuItem mnemonicParsing="false" onAction="#insertPage" styleClass="bar" text="New page" />
                         <SeparatorMenuItem mnemonicParsing="false" styleClass="bar" />
                         <MenuItem mnemonicParsing="false" onAction="#insertHeading" styleClass="bar" text="Heading" />
                         <MenuItem mnemonicParsing="false" onAction="#insertParagraph" styleClass="bar" text="Paragraph" />

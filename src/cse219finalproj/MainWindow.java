@@ -96,6 +96,29 @@ public class MainWindow implements Initializable {
         ComponentEditorWrapper cer = new ComponentEditorWrapper();
         cer.make(CompType.VIDEO);
     }
+    @FXML
+    private void insertPage(ActionEvent event){
+        Page p = new Page();
+        CSE219FinalProj.currentSite.getPages().add(p);
+        CSE219FinalProj.currentPage=p;
+        this.updateInformation();
+    }
+    @FXML
+    private void refresh(ActionEvent event){
+        updateInformation();
+    }
+    @FXML
+    private void switchPage(ActionEvent event){
+        Page p = new Page();
+        p.setTitle((String)pageBox.getValue());
+        for(Page p1:CSE219FinalProj.currentSite.getPages()){
+            if(p1.getTitle().equals(pageBox.getValue()))
+            p=p1;
+        }
+        //CSE219FinalProj.currentSite.getPages().add(p);
+        CSE219FinalProj.currentPage=p;
+        this.updateInformation();
+    }
     public void updateInformation(){
         ArrayList<String> comptext = new ArrayList <String>();
         for(PageComponent pc: CSE219FinalProj.currentPage.getComponents()){
@@ -128,7 +151,7 @@ public class MainWindow implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                     String oldValue, String newValue) {
 
-                CSE219FinalProj.currentPage.setTitle(titleField.getText());updateInformation();DebugPrint.println("tftc: "+titleField.getText());
+                CSE219FinalProj.currentPage.setTitle(titleField.getText());updateInformation();
             }
         });
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
