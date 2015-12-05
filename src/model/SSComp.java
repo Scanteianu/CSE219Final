@@ -18,7 +18,8 @@ public class SSComp implements PageComponent
     private ArrayList<String> captions;
     private ArrayList<String> fileNames;
     private ArrayList<String> fileLocations;
-
+    private int sizeX=480;
+    private int sizeY=640;
     public String getName() {
         return name;
     }

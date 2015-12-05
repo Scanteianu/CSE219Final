@@ -35,7 +35,9 @@ public class CSE219FinalProj extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        currentPage=new Page();
+        currentSite = new Site();
+        currentSite.getPages().add(currentPage);
         launch(args);
         
     }
@@ -47,4 +49,5 @@ public class CSE219FinalProj extends Application {
     public static Site currentSite;
     public static boolean isEdit;
     public static MainWindow window;
+    public static boolean isSaved=true;
 }

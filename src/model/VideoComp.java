@@ -14,6 +14,8 @@ public class VideoComp implements PageComponent{
     private String caption="";
     private String fileLocation="";
     private String fileName="";
+    private int sizeX=480;
+    private int sizeY=640;
     private final CompType type=CompType.VIDEO;
 
     public String getFileName() {
@@ -52,6 +54,22 @@ public class VideoComp implements PageComponent{
     @Override
     public String toHTML() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public void setSizeX(int sizeX) {
+        this.sizeX = sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
+    public void setSizeY(int sizeY) {
+        this.sizeY = sizeY;
     }
 
     @Override

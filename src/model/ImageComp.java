@@ -14,7 +14,8 @@ public class ImageComp implements PageComponent{
     private String caption="";
     private String fileLocation="";
     private String fileName="";
-
+    private int sizeX=480;
+    private int sizeY=640;
     public String getFileName() {
         return fileName;
     }

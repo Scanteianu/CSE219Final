@@ -28,6 +28,7 @@ public class ComponentEditorWrapper {
        
         String title="";
         CSE219FinalProj.isEdit=false;
+        CSE219FinalProj.isSaved=false;
         try {
             Parent root=null;
             switch(type){
@@ -71,6 +72,7 @@ public class ComponentEditorWrapper {
     public void edit(PageComponent comp){
         String title="";
         CSE219FinalProj.isEdit=true;
+        CSE219FinalProj.isSaved=false;
         try {
             Parent root=null;
             switch(comp.getType()){
