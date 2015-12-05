@@ -49,5 +49,14 @@ public class Site {
     private String name="";
     private String author="";
     private Layout layout=Layout.MIDDLE_BANNER;
+
+    public SiteColor getColor() {
+        return color;
+    }
+
+    public void setColor(SiteColor color) {
+        this.color = color;
+    }
+    private SiteColor color=SiteColor.BLUE_WHITE;
     
 }

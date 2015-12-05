@@ -31,6 +31,7 @@ import model.CompType;
 import model.Layout;
 import model.Page;
 import model.PageComponent;
+import model.SiteColor;
 
 /**
  *
@@ -126,6 +127,7 @@ public class MainWindow implements Initializable {
     }
     @FXML
     private void removePage(ActionEvent event){
+        titleIsEdit=true;
         Page p = new Page();
         CSE219FinalProj.currentSite.getPages().remove(CSE219FinalProj.currentPage);
         if(CSE219FinalProj.currentSite.getPages().isEmpty()){
@@ -139,6 +141,7 @@ public class MainWindow implements Initializable {
         
         }
         CSE219FinalProj.isSaved=false;
+        titleIsEdit=false;
     }
     @FXML
     private void refresh(ActionEvent event){
@@ -167,6 +170,7 @@ public class MainWindow implements Initializable {
         ObservableList ol1=FXCollections.observableList(comptext);
         list.setItems(ol1);
         layoutBox.setValue(CSE219FinalProj.currentSite.getLayout().getName());
+        colorBox.setValue(CSE219FinalProj.currentSite.getColor().getName());
          ArrayList<String> pages = new ArrayList <String>();
         for(Page p: CSE219FinalProj.currentSite.getPages()){
             pages.add(p.getTitle());
@@ -186,6 +190,8 @@ public class MainWindow implements Initializable {
         
         ObservableList ol2=FXCollections.observableArrayList(Layout.getPossibilities());
         layoutBox.setItems(ol2);
+        ObservableList ol3=FXCollections.observableArrayList(SiteColor.getPossibilities());
+        colorBox.setItems(ol3);
         //titleField.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());});
         titleField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
@@ -210,6 +216,7 @@ public class MainWindow implements Initializable {
         authorField.setOnKeyReleased(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
         footerArea.setOnKeyReleased(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
         layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));});
+        colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
