@@ -102,6 +102,7 @@ public class MainWindow implements Initializable {
         CSE219FinalProj.currentSite.getPages().add(p);
         CSE219FinalProj.currentPage=p;
         this.updateInformation();
+        CSE219FinalProj.isSaved=false;
     }
     @FXML
     private void removePage(ActionEvent event){
@@ -117,6 +118,7 @@ public class MainWindow implements Initializable {
             this.updateInformation();
         
         }
+        CSE219FinalProj.isSaved=false;
     }
     @FXML
     private void refresh(ActionEvent event){

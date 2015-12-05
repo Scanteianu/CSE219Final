@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.CompType;
 import model.PageComponent;
+import model.TextComp;
 
 /**
  *
@@ -37,8 +38,11 @@ public class ComponentEditorWrapper {
                     title="Add Image";
                     break;
                 case PARAGRAPH:
-                    root= FXMLLoader.load(getClass().getResource("ParagraphEditor.fxml"));
                     title="Add Text";
+                    TextComp tc =new TextComp();
+                    tc.setType(CompType.PARAGRAPH);
+                    CSE219FinalProj.currentComponent=tc;
+                    root= FXMLLoader.load(getClass().getResource("ParagraphEditor.fxml"));
                     break;
                 case HEADING:
                     root= FXMLLoader.load(getClass().getResource("HeadingEditor.fxml"));
