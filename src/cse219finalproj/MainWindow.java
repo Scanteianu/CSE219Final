@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +29,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import model.CompType;
 import model.Layout;
+import model.Page;
 import model.PageComponent;
 
 /**
@@ -46,6 +49,8 @@ public class MainWindow implements Initializable {
     private TextField authorField;
     @FXML
     private TextArea footerArea;
+    @FXML
+    private ComboBox pageBox;
     @FXML
     private ComboBox layoutBox;
     @FXML 
@@ -99,6 +104,13 @@ public class MainWindow implements Initializable {
         ObservableList ol1=FXCollections.observableList(comptext);
         list.setItems(ol1);
         layoutBox.setValue(CSE219FinalProj.currentSite.getLayout().getName());
+         ArrayList<String> pages = new ArrayList <String>();
+        for(Page p: CSE219FinalProj.currentSite.getPages()){
+            pages.add(p.getTitle());
+        }
+        ObservableList ol2=FXCollections.observableList(pages);
+        pageBox.setItems(ol2);
+        pageBox.setValue(CSE219FinalProj.currentPage.getTitle());
         titleField.setText(CSE219FinalProj.currentPage.getTitle());
         authorField.setText(CSE219FinalProj.currentSite.getAuthor());
         footerArea.setText(CSE219FinalProj.currentPage.getFooter());
@@ -110,8 +122,18 @@ public class MainWindow implements Initializable {
         
         ObservableList ol2=FXCollections.observableArrayList(Layout.getPossibilities());
         layoutBox.setItems(ol2);
-        
-        
+        //titleField.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());});
+        titleField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                    String oldValue, String newValue) {
+
+                CSE219FinalProj.currentPage.setTitle(titleField.getText());updateInformation();DebugPrint.println("tftc: "+titleField.getText());
+            }
+        });
+        //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
+        authorField.setOnKeyTyped(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
+        footerArea.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
