@@ -74,6 +74,17 @@ public class MainWindow implements Initializable {
             Messages.ErrorMessage("A component must be selected for deletion.");
         }
     }
+    @FXML
+    private void editComp(ActionEvent event) {
+        if(list.getSelectionModel().getSelectedIndex()!=-1){
+        CSE219FinalProj.currentComponent=CSE219FinalProj.currentPage.getComponents().get(list.getSelectionModel().getSelectedIndex());
+        ComponentEditorWrapper cew=new ComponentEditorWrapper();
+        cew.edit(CSE219FinalProj.currentComponent);
+        this.updateInformation();}
+        else{
+            Messages.ErrorMessage("A component must be selected for editing.");
+        }
+    }
      @FXML
     private void insertImg(ActionEvent event) {
           ComponentEditorWrapper cer = new ComponentEditorWrapper();
@@ -196,8 +207,8 @@ public class MainWindow implements Initializable {
             }
         });
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
-        authorField.setOnKeyTyped(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
-        footerArea.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
+        authorField.setOnKeyReleased(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
+        footerArea.setOnKeyReleased(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
         layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();

@@ -101,7 +101,7 @@
                    <Tooltip text="Remove Current Page" />
                </tooltip> 
             </Button>
-            <Button mnemonicParsing="false" styleClass="button" GridPane.rowIndex="7">
+            <Button mnemonicParsing="false" onAction="#editComp" styleClass="button" GridPane.rowIndex="7">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -196,7 +196,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Edit">
                      <items>
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Edit Selected" />
+                        <MenuItem mnemonicParsing="false" onAction="#editComp" styleClass="bar" text="Edit Selected" />
                         <MenuItem mnemonicParsing="false" onAction="#removeComp" styleClass="bar" text="Delete Selected" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#removePage" text="Delete Current Page" />
