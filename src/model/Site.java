@@ -58,5 +58,13 @@ public class Site {
         this.color = color;
     }
     private SiteColor color=SiteColor.BLUE_WHITE;
-    
+    private SiteFont font =SiteFont.OSWALD;
+
+    public SiteFont getFont() {
+        return font;
+    }
+
+    public void setFont(SiteFont font) {
+        this.font = font;
+    }
 }

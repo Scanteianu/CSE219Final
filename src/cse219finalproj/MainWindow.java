@@ -27,11 +27,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import model.CompType;
 import model.Layout;
 import model.Page;
 import model.PageComponent;
 import model.SiteColor;
+import model.SiteFont;
 
 /**
  *
@@ -65,6 +67,13 @@ public class MainWindow implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
+    }
+    @FXML
+    private void selectBanner(ActionEvent event) {
+        FileChooser jfc= new FileChooser();
+        File banner=jfc.showOpenDialog(null).getAbsoluteFile();
+        //CSE219FinalProj.currentSite.
+        
     }
     @FXML
     private void removeComp(ActionEvent event) {
@@ -171,6 +180,7 @@ public class MainWindow implements Initializable {
         list.setItems(ol1);
         layoutBox.setValue(CSE219FinalProj.currentSite.getLayout().getName());
         colorBox.setValue(CSE219FinalProj.currentSite.getColor().getName());
+        fontBox.setValue(CSE219FinalProj.currentSite.getFont().getName());
          ArrayList<String> pages = new ArrayList <String>();
         for(Page p: CSE219FinalProj.currentSite.getPages()){
             pages.add(p.getTitle());
@@ -192,6 +202,8 @@ public class MainWindow implements Initializable {
         layoutBox.setItems(ol2);
         ObservableList ol3=FXCollections.observableArrayList(SiteColor.getPossibilities());
         colorBox.setItems(ol3);
+        ObservableList ol4=FXCollections.observableArrayList(SiteFont.getPossibilities());
+        fontBox.setItems(ol4);
         //titleField.setOnKeyTyped(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());});
         titleField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
@@ -217,6 +229,7 @@ public class MainWindow implements Initializable {
         footerArea.setOnKeyReleased(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
         layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));});
         colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));});
+        fontBox.setOnAction(e->{CSE219FinalProj.currentSite.setFont(SiteFont.getValueByName((String)fontBox.getValue()));});
         updateInformation();
         final WebEngine webEngine = webview.getEngine();
         //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
