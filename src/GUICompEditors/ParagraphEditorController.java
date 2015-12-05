@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import model.StringWrap;
 import model.TextComp;
 
 /**
@@ -55,12 +56,16 @@ public class ParagraphEditorController implements Initializable {
     public void link(ActionEvent e){
         //can use selected text in text area if needed to edit hyper links
         try {
+            StringWrap link=new StringWrap();
+            CSE219FinalProj.link=link;
             Parent root= FXMLLoader.load(getClass().getResource("LinkEditor.fxml"));
+            
             Scene scene=new Scene(root);
             Stage compStage=new Stage();
             compStage.setScene(scene);
-            compStage.show();
             compStage.setTitle("Add a link");
+            compStage.showAndWait();
+            text.insertText(text.getCaretPosition(),link.text);
         } catch (IOException ex) {
             
             Logger.getLogger(ParagraphEditorController.class.getName()).log(Level.SEVERE, null, ex);

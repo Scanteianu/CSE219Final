@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.ImageComp;
+import model.StringWrap;
 
 /**
  *
@@ -51,6 +52,6 @@ public class CSE219FinalProj extends Application {
     public static boolean isEdit;
     public static MainWindow window;
     public static boolean isSaved=true;
-    public static String link="";
+    public static StringWrap link=null;
     public static ImageComp sscomp=null;
 }

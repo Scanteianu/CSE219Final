@@ -5,12 +5,16 @@
  */
 package GUICompEditors;
 
+import cse219finalproj.CSE219FinalProj;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.StringWrap;
 
 /**
  * FXML Controller class
@@ -19,6 +23,9 @@ import javafx.stage.Stage;
  */
 public class LinkEditorController implements Initializable {
 
+    @FXML TextField text;
+    @FXML TextField url;
+    StringWrap link=CSE219FinalProj.link;
     /**
      * Initializes the controller class.
      */
@@ -27,6 +34,7 @@ public class LinkEditorController implements Initializable {
         // TODO
     }    
       public void okClicked(ActionEvent e){
+        link.text="<a class=\"inlineRef\" href=\""+url.getText()+"\">"+text.getText()+"</a>";
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
     public void cancelClicked(ActionEvent e){
