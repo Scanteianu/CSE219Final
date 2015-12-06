@@ -58,7 +58,7 @@ public class VideoComp implements PageComponent, Serializable{
   
     @Override
     public String toHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "var "+name+"=[\"video\",\""+this.fileName+"\",\""+caption+"\"];";
     }
 
     public int getSizeX() {

@@ -90,9 +90,11 @@ public class ImageComp implements PageComponent, Serializable{
   
     @Override
     public String toHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "var "+name+"=[\"video\",\""+this.fileName+"\",\""+caption+"\","+this.floatNum+"];";
     }
-
+    public String toSSHTMLFragment(){
+        return ",\""+this.fileName+"\",\""+this.caption+"\"";
+    }
     @Override
     public CompType getType() {
      return type;

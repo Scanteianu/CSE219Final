@@ -63,9 +63,22 @@ public class SSComp implements PageComponent, Serializable
         return type;
     }
 
-  
+    /**
+     * precondition: name must be set
+     * @return null if empty ss
+     */
     @Override
     public String toHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if( this.images.isEmpty())
+            return null;
+        
+                
+        String s ="var "+this.name+"=[\"slideshow\",0,";
+        for(ImageComp i:this.images){
+            s+=i.toSSHTMLFragment();
+        }
+        s+="];";
+        return s;
+        
     }
 }

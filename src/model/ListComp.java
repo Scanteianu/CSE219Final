@@ -46,7 +46,14 @@ public class ListComp implements PageComponent, Serializable {
 
     @Override
     public String toHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.text.isEmpty())
+            return null;
+        String s="var"+ this.name+"=[\"text\", \"list\"";
+        for(String s1: this.text){
+            s+=",\""+s1+"\"";
+        }
+        s+="];";
+        return s;
     }
 
     @Override

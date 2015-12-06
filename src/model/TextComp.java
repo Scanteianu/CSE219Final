@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author Dan
  */
 public class TextComp implements PageComponent, Serializable {
-    private String name;
+    private String name="";
     private CompType type;
     @Override
     public String toString(){
@@ -41,10 +41,16 @@ public class TextComp implements PageComponent, Serializable {
     public void setName(String name) {
        this.name=name;
     }
-
+    /**
+     * precondition: name must be set externally first.
+     * @return 
+     */
     @Override
     public String toHTML() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if(type==CompType.HEADING)
+            return"var "+name+"=[\"text\",\"heading\",\""+text+"\"];";
+        return"var "+name+"=[\"text\",\"paragraph\",\""+text+"\"];";
     }
 
     @Override
