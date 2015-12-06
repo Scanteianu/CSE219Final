@@ -19,11 +19,11 @@
             <VBox prefHeight="361.0" prefWidth="172.0" styleClass="hbox">
                <children>
                   <Button mnemonicParsing="false" onAction="#addClicked" text=" Add Slide " />
-                  <Button mnemonicParsing="false" text=" Edit Slide " />
-                  <Button mnemonicParsing="false" text="Delete Slide" />
+                  <Button mnemonicParsing="false" onAction="#editClicked" text=" Edit Slide " />
+                  <Button mnemonicParsing="false" onAction="#removeClicked" text="Delete Slide" />
                   <Pane prefHeight="12.0" prefWidth="152.0" />
-                  <Button mnemonicParsing="false" text="  Move Up  " />
-                  <Button mnemonicParsing="false" text="Move Down" />
+                  <Button mnemonicParsing="false" onAction="#moveBefore" text="  Move Before  " />
+                  <Button mnemonicParsing="false" onAction="#moveAfter" prefHeight="48.0" prefWidth="141.0" text="Move After" />
                   <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox">
                      <children>
                         <Button mnemonicParsing="false" onAction="#okClicked" text="Ok" />

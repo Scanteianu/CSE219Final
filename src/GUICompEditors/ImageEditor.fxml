@@ -9,30 +9,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="459.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUICompEditors.ImageEditorController">
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="517.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUICompEditors.ImageEditorController">
     <stylesheets>
         <URL value="@../GUICompEditors/compeditor.css" />
     </stylesheets>
    <children>
-      <GridPane layoutX="-1.0" prefHeight="394.0" prefWidth="451.0" styleClass="grid">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="436.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="263.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="125.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox layoutX="-1.0" prefHeight="407.0" prefWidth="531.0" styleClass="hbox">
          <children>
-            <ImageView id="imgView" fx:id="view" fitHeight="262.0" fitWidth="416.0" pickOnBounds="true" preserveRatio="true" styleClass="mainFxmlClass">
+            <ImageView id="imgView" fx:id="view" fitHeight="234.0" fitWidth="448.0" pickOnBounds="true" preserveRatio="true" styleClass="mainFxmlClass">
                <image>
                   <Image url="@../ProgramImg/DefaultImg.jpg" />
-               </image></ImageView>
-            <TextArea fx:id="ta" prefHeight="200.0" prefWidth="200.0" styleClass="mainFxmlClass" text="Type your caption here......" GridPane.rowIndex="1">
+               </image>
+            </ImageView>
+            <TextArea fx:id="ta" prefHeight="66.0" prefWidth="477.0" styleClass="mainFxmlClass" text="Type your caption here......">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding></TextArea>
-            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox" GridPane.rowIndex="2">
+               </padding>
+            </TextArea>
+            <HBox prefHeight="68.0" prefWidth="491.0" styleClass="hbox">
                <children>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#select" styleClass="button" text="Select Image">
                      </Button>
@@ -49,6 +43,6 @@
                </children>
             </HBox>
          </children>
-      </GridPane>
+      </VBox>
    </children>
 </AnchorPane>
