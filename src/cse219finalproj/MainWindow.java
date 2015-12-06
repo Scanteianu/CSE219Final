@@ -7,6 +7,11 @@ package cse219finalproj;
 
 import GUICompEditors.ComponentEditorWrapper;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,10 +33,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import model.CompType;
 import model.Layout;
 import model.Page;
 import model.PageComponent;
+import model.Site;
 import model.SiteColor;
 import model.SiteFont;
 
@@ -69,6 +76,105 @@ public class MainWindow implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
+    }
+    @FXML
+    private void saveClicked(ActionEvent event) {
+        
+     if(CSE219FinalProj.currentSite.getLocation()==null){
+         saveAsClicked(null);
+         return;
+     }
+        try
+      {
+         FileOutputStream fileOut =
+         new FileOutputStream(CSE219FinalProj.currentSite.getLocation());
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(CSE219FinalProj.currentSite);
+         out.close();
+         fileOut.close();
+         CSE219FinalProj.isSaved=true;
+      }catch(IOException i)
+      {
+          i.printStackTrace();
+      }
+      
+    }
+    @FXML
+    private void saveAsClicked(ActionEvent event) {
+        FileChooser jfc = new FileChooser();
+        jfc.setSelectedExtensionFilter(new ExtensionFilter("ep"));
+        File f =jfc.showSaveDialog(null).getAbsoluteFile();
+        CSE219FinalProj.currentSite.setLocation(f.getPath());
+        CSE219FinalProj.currentSite.setName(f.getName());
+        
+        try
+      {
+         FileOutputStream fileOut =
+         new FileOutputStream(CSE219FinalProj.currentSite.getLocation());
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(CSE219FinalProj.currentSite);
+         out.close();
+         fileOut.close();
+         CSE219FinalProj.isSaved=true;
+      }catch(IOException i)
+      {
+          Messages.ErrorMessage("Unable to save your EPortfolio. Please try again.");
+      }
+    }
+    @FXML
+    private void openClicked(ActionEvent event) {
+          FileChooser jfc = new FileChooser();
+        if(!CSE219FinalProj.isSaved)
+            if(!Messages.save(CSE219FinalProj.currentSite.getName()))
+                return;
+        try
+      {
+         FileInputStream fileIn = new FileInputStream(jfc.showOpenDialog(null).getAbsoluteFile());
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         CSE219FinalProj.currentSite = (Site) in.readObject();
+         this.titleIsEdit=true;
+         if(CSE219FinalProj.currentSite.getPages().isEmpty())
+             CSE219FinalProj.currentPage=new Page();
+         else
+            CSE219FinalProj.currentPage = CSE219FinalProj.currentSite.getPages().get(0);
+         this.updateInformation();
+         this.titleIsEdit=false;
+         in.close();
+         fileIn.close();
+      }catch(IOException i)
+      {
+         Messages.ErrorMessage("Unable to open your project, made an empty one.");
+         this.newFile();
+         
+      }catch(ClassNotFoundException c)
+      {
+         Messages.ErrorMessage("Unable to open your project, made an empty one.");
+         this.newFile();
+      }
+    }
+    @FXML
+    private void newClicked(ActionEvent event) {
+        if(!CSE219FinalProj.isSaved)
+            if(Messages.save(CSE219FinalProj.currentSite.getName()))
+                newFile();
+        if(CSE219FinalProj.isSaved)
+            newFile();
+    }
+    public void newFile(){
+        this.titleIsEdit=true;
+        
+        CSE219FinalProj.currentPage=new Page();
+        CSE219FinalProj.currentSite = new Site();
+        CSE219FinalProj.currentSite.getPages().add(CSE219FinalProj.currentPage);
+        this.updateInformation();
+        this.titleIsEdit=false;
+    }
+    @FXML
+    private void exitClicked(ActionEvent event) {
+        if(!CSE219FinalProj.isSaved)
+            if(!Messages.save(CSE219FinalProj.currentSite.getName()))
+                return;
+        System.exit(0);
     }
     @FXML
     private void selectBanner(ActionEvent event) {
@@ -208,6 +314,7 @@ public class MainWindow implements Initializable {
         authorField.setText(CSE219FinalProj.currentSite.getAuthor());
         footerArea.setText(CSE219FinalProj.currentPage.getFooter());
         bannerLabel.setText("Banner\n"+CSE219FinalProj.currentPage.getBannerFilename());
+        CSE219FinalProj.stage.setTitle("Dan's Site Builder: "+CSE219FinalProj.currentSite.getName());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -231,6 +338,7 @@ public class MainWindow implements Initializable {
                 CSE219FinalProj.currentPage.setTitle(titleField.getText());
                 DebugPrint.println("focus changed-oof: "+CSE219FinalProj.currentPage.getTitle());
                 updateInformation();
+                CSE219FinalProj.isSaved=false;
                 titleIsEdit=false;
                 
                 }

@@ -3,11 +3,13 @@ Paragraph and Heading Only
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dan
  */
-public class TextComp implements PageComponent {
+public class TextComp implements PageComponent, Serializable {
     private String name;
     private CompType type;
     @Override

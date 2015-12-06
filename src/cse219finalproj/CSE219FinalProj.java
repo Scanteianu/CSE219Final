@@ -25,11 +25,13 @@ public class CSE219FinalProj extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        this.stage=stage;
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        
         stage.show();
     }
 
@@ -54,4 +56,5 @@ public class CSE219FinalProj extends Application {
     public static boolean isSaved=true;
     public static StringWrap link=null;
     public static ImageCompWrap sscomp=null;
+    public static Stage stage;
 }

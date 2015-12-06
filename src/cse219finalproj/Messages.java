@@ -7,6 +7,7 @@ package cse219finalproj;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  *
@@ -19,5 +20,15 @@ public class Messages {
             alert.setHeaderText("Error:");
             alert.setContentText(message);
             alert.showAndWait();
+    }
+    public static boolean save(String currentFile){
+         Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("E-Portfolio Maker");
+            alert.setHeaderText("Unsaved Changes:");
+            alert.setContentText("Would you like to continue, discarding unsaved changes to "+currentFile+"?");
+            alert.showAndWait();
+            if(alert.getResult().equals(ButtonType.OK))
+                return true;
+            return false;
     }
 }

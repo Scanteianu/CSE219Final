@@ -3,13 +3,14 @@ Paragraph and Heading Only
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dan
  */
-public class ListComp implements PageComponent {
+public class ListComp implements PageComponent, Serializable {
     private String name;
     private CompType type;
     @Override

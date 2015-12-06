@@ -178,12 +178,12 @@
                <menus>
                   <Menu mnemonicParsing="false" styleClass="bar" text="File">
                      <items>
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="New Site" />
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Open" />
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Save" />
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Save As" />
+                        <MenuItem mnemonicParsing="false" onAction="#newClicked" styleClass="bar" text="New Site" />
+                        <MenuItem mnemonicParsing="false" onAction="#openClicked" styleClass="bar" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveClicked" styleClass="bar" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveAsClicked" styleClass="bar" text="Save As" />
                         <MenuItem mnemonicParsing="false" styleClass="bar" text="Export" />
-                        <MenuItem mnemonicParsing="false" styleClass="bar" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitClicked" styleClass="bar" text="Close" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" styleClass="bar" text="Edit">
@@ -211,7 +211,7 @@
             <Separator prefWidth="200.0" />
             <HBox prefHeight="100.0" prefWidth="200.0" styleClass="filebar">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="46.0">
+                  <Button mnemonicParsing="false" onAction="#newClicked" prefHeight="36.0" prefWidth="46.0">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -223,7 +223,7 @@
                         <Tooltip text="New Site" />
                      </tooltip>                     
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="50.0">
+                  <Button mnemonicParsing="false" onAction="#openClicked" prefHeight="35.0" prefWidth="50.0">
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -235,7 +235,7 @@
                         <Tooltip text="Open File" />
                      </tooltip>                     
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="43.0">
+                  <Button mnemonicParsing="false" onAction="#saveClicked" prefHeight="32.0" prefWidth="43.0">
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -259,7 +259,7 @@
                         <Tooltip text="Export Site" />
                      </tooltip>
                   </Button>
-                  <Button mnemonicParsing="false">
+                  <Button mnemonicParsing="false" onAction="#exitClicked">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>

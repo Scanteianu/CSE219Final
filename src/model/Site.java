@@ -5,13 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dan
  */
-public class Site {
+public class Site implements Serializable {
 
     public ArrayList<Page> getPages() {
         return pages;
@@ -46,7 +47,16 @@ public class Site {
     }
     
     private ArrayList<Page> pages = new ArrayList<Page>();
-    private String name="";
+    private String name="Untitled";
+    private String location=null;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
     private String author="";
     private Layout layout=Layout.MIDDLE_BANNER;
 

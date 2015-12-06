@@ -5,13 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dan
  */
-public class Page {
+public class Page implements Serializable {
 
     public ArrayList<PageComponent> getComponents() {
         return components;

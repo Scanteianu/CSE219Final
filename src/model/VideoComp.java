@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Dan
  */
-public class VideoComp implements PageComponent{
+public class VideoComp implements PageComponent, Serializable{
     private String name="";
     private String caption="";
     private String fileLocation="";

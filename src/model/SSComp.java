@@ -5,13 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dan
  */
-public class SSComp implements PageComponent
+public class SSComp implements PageComponent, Serializable
 {
     private String name;
     private final CompType type=CompType.SLIDESHOW;
