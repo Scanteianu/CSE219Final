@@ -19,7 +19,7 @@ var whatisTitle=["text","heading","The Guitar:"];
 var whatis=["text","paragraph","From <a class=\"inlineRef\" href=\"https://en.wikipedia.org/wiki/Guitar\">Wikipedia:</a> The guitar is a popular musical instrument classified as a string instrument with anywhere from 4 to 18 strings, usually having 6. The sound is projected either acoustically or through electrical amplification (for an acoustic guitar or an electric guitar, respectively). It is typically played by strumming or plucking the strings with the right hand while fretting (or pressing against the fret) the strings with the left hand. The guitar is a type of chordophone, traditionally constructed from wood and strung with either gut, nylon or steel strings and distinguished from other chordophones by its construction and tuning. The modern guitar was preceded by the gittern, the vihuela, the four-course Renaissance guitar, and the five-course baroque guitar, all of which contributed to the development of the modern six-string instrument.There are three main types of modern acoustic guitar: the classical guitar (nylon-string guitar), the steel-string acoustic guitar, and the archtop guitar. The tone of an acoustic guitar is produced by the strings' vibration, amplified by the body of the guitar, which acts as a resonating chamber. The classical guitar is often played as a solo instrument using a comprehensive fingerpicking technique. The term fingerpicking can also refer to a specific tradition of folk, blues, bluegrass, and country guitar playing in the US.Electric guitars, introduced in the 1930s, use an amplifier that can electronically manipulate and shape the tone. Early amplified guitars employed a hollow body, but a solid body was eventually found more suitable, as it was less prone to feedback. Electric guitars have had a continuing profound influence on popular culture.The guitar is used in a wide variety of musical genres worldwide. It is recognized as a primary instrument in genres such as blues, bluegrass, country, flamenco, folk, jazz, jota, mariachi, metal, punk, reggae, rock, soul, and many forms of pop."];
 var typesTitle=["text","heading","Types of guitar:"];
 var types=["text", "list", "Electric","Hollow body electric","steel strung acoustic","nylon strung acoustic","acoustic electric (both nylon and steel strung)","bass"];
-var photo=["img","tele1.jpg","This is an electric guitar known as the Telecaster"];
+var photo=["img","tele1.jpg","This is an electric guitar known as the Telecaster",0];
 // first index is starting index, second index is id (must be unique), photo, caption, repeat
 var pictures=["slideshow",0,"guitars","strat.jpg","Fender Stratocaster Guitar","tele2.jpg","Fender Telecaster Guitar","lp.jpg","Gibson Les Paul Guitar","prs.jpg","Paul Reed Smith Guitar"];
 var pictures2=["slideshow",0,"guitars2","tele1.jpg","Fender Telecaster Guitar","prs2.jpg","Multiple PRS guitars","lp.jpg","Gibson Les Paul Guitar, same as above"];
@@ -108,8 +108,11 @@ function loadSS(data){
     
 }
 function makeImg(data){
-    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\">"+data[2]+"</p>");
-    
+    if(data[3]<0)
+        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: left\"><br>"+"<p class=\"caption\" style=\"float: left;\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
+    if(data[3]>0)
+        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: right\"><br>"+"<p class=\"caption\" style=\" float: right\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
+    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\" >"+data[2]+"</p>");
 }
 function ssFind(ssID){
     var slideshowslength=slideshows.length;

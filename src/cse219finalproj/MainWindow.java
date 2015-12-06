@@ -102,7 +102,6 @@ public class MainWindow implements Initializable {
     @FXML
     private void saveAsClicked(ActionEvent event) {
         FileChooser jfc = new FileChooser();
-        jfc.setSelectedExtensionFilter(new ExtensionFilter("ep"));
         File f =jfc.showSaveDialog(null).getAbsoluteFile();
         CSE219FinalProj.currentSite.setLocation(f.getPath());
         CSE219FinalProj.currentSite.setName(f.getName());
@@ -159,6 +158,15 @@ public class MainWindow implements Initializable {
                 newFile();
         if(CSE219FinalProj.isSaved)
             newFile();
+    }
+    @FXML
+    private void export(ActionEvent event) {
+        try {
+            SiteBuilder.BuildSite(CSE219FinalProj.currentSite);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            Messages.ErrorMessage("Couldn't export your site due to an IOException. Sorry.");
+        }
     }
     public void newFile(){
         this.titleIsEdit=true;

@@ -73,7 +73,7 @@ public class SSComp implements PageComponent, Serializable
             return null;
         
                 
-        String s ="var "+this.name+"=[\"slideshow\",0,";
+        String s ="var "+this.name+"=[\"slideshow\",0,\""+this.name+"ss\"";
         for(ImageComp i:this.images){
             s+=i.toSSHTMLFragment();
         }

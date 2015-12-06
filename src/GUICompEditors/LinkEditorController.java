@@ -34,7 +34,7 @@ public class LinkEditorController implements Initializable {
         // TODO
     }    
       public void okClicked(ActionEvent e){
-        link.text="<a class=\"inlineRef\" href=\""+url.getText()+"\">"+text.getText()+"</a>";
+        link.text="<a class=\\\"inlineRef\\\" href=\\\""+url.getText()+"\\\">"+text.getText()+"</a>";
         ((Stage)((Button)e.getSource()).getScene().getWindow()).close();
     }
     public void cancelClicked(ActionEvent e){

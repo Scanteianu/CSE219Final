@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class ListComp implements PageComponent, Serializable {
     private String name;
-    private CompType type;
+    private CompType type=CompType.LIST;
     @Override
     public String toString(){
         String returns ="List: \n";
@@ -48,7 +48,7 @@ public class ListComp implements PageComponent, Serializable {
     public String toHTML() {
         if(this.text.isEmpty())
             return null;
-        String s="var"+ this.name+"=[\"text\", \"list\"";
+        String s="var "+ this.name+"=[\"text\", \"list\"";
         for(String s1: this.text){
             s+=",\""+s1+"\"";
         }

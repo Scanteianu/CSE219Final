@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 public class TextComp implements PageComponent, Serializable {
     private String name="";
-    private CompType type;
+    private CompType type=CompType.PARAGRAPH;
     @Override
     public String toString(){
         if(type==CompType.HEADING)

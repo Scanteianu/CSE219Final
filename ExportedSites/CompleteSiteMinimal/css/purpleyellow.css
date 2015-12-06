@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 5, 2015, 11:10:20 PM
+    Author     : Dan
+*/
+
+body {
+    background-color: rgb(70, 0, 70);
+}
+table.nav{
+    
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    //font-family: "Arimo";
+    background-color: rgb(90,0,90);
+    
+}
+a.nav{
+    color: rgb(255,255,150);
+    font-size: 18;
+}
+a.inlineRef{
+    color: rgb(255,255,150);
+}
+p.caption{
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    color: rgb(255,255,150);
+    //font-family: "Arimo";
+}
+p.paragraph{
+    text-align: left;
+    font-size: 18;
+    //font-family: "Arimo";
+    color: rgb(255,255,150);
+}
+p.list{
+    text-align: left;
+    font-size: 18;
+    //font-family: "Arimo";
+    color: rgb(255,255,150);
+}
+ul.list{
+    color: rgb(255,255,150);
+    font-size: 18;
+    //font-family: "Arimo";
+}
+p.heading{
+    text-align: left;
+    font-size: 24;
+    //font-family: "Arimo";
+    color: rgb(255,255,150);
+}
+p.caption{
+    
+}
+div.central{
+    text-align: center;
+    font-size: 12;
+    //font-family: "Arimo";
+}
+h1.banner{
+    text-align: left;
+    font-size: 36;
+    //font-family: "Arimo";
+    color: rgb(255,255,150);
+    margin-bottom: 0px;
+}
+h2.banner{
+    text-align: left;
+    font-size: 16;
+    //font-family: "Arimo";
+    color: rgb(255,255,150);
+    margin-top: 0px;
+}

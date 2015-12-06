@@ -77,4 +77,33 @@ public class Site implements Serializable {
     public void setFont(SiteFont font) {
         this.font = font;
     }
+    public String partialHTML(){
+        String s ="";
+        s+="var author =\""+author+"\";\n";
+        String pagesStr="var pages =[";
+        String pageTtl="var pageNames =[";
+        for(Page p: this.pages){
+            pagesStr+="\""+p.getName()+"\",";
+            pageTtl+="\""+p.getTitle()+"\",";
+        }
+        pagesStr=pagesStr.substring(0,pagesStr.length()-1);
+        pageTtl=pageTtl.substring(0,pageTtl.length()-1);
+        pagesStr+="];\n";
+        pageTtl+="];\n";
+        s+=pagesStr;
+        s+=pageTtl;
+        if(this.layout==Layout.MIDDLE_BANNER)
+            s+="var navStyle =\"horizontal-below\";\n";
+         if(this.layout==Layout.TOP_BANNER)
+            s+="var navStyle =\"horizontal-above\";\n";
+         if(this.layout==Layout.SIDE_BANNER)
+             s+="var navStyle =\"vertical\";\n";
+         if(this.layout==Layout.TOP_NO_BANNER)
+            s+="var navStyle =\"horizontal-above\";\n";
+         if(this.layout==Layout.SIDE_NO_BANNER)
+             s+="var navStyle =\"vertical\";\n";
+        
+        
+        return s;
+    }
 }

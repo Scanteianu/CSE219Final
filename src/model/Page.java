@@ -55,6 +55,24 @@ public class Page implements Serializable {
     public void setBannerFilePath(String bannerFilePath) {
         this.bannerFilePath = bannerFilePath;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String partialHTML(){
+        String s ="";
+        s+="var banner =\""+bannerFilename+"\";\n";
+        s+="var title =\""+title+"\";\n";
+        s+="var  footer=[\"text\",\"paragraph\",\""+footer+"\"];\n";
+        
+        return s;
+    }
+    private String name="";
+    
     private String bannerFilename="";
     private String bannerFilePath="";
     private String footer="";

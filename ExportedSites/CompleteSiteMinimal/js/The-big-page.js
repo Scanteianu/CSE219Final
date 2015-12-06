@@ -1,30 +1,19 @@
-/* 
- *Dan Scanteianu Webpage, License: none/sure
- */
-//begin stuff printed to file by java program
-var banner = "banner.jpg";
+var author ="";
+var pages =["The-big-page","The-little-page"];
+var pageNames =["The big page","The little page"];
+var navStyle ="horizontal-below";
 
-var title="Fender Stratocaster";
-var author="Dan Scanteianu";
-var navStyle="horizontal-below";
-//var navStyle="horizontal-above";
-//var navStyle="vertical";
-var pages=["home","strat","sg","hollow","classical", "bass"];
-var pageNames=["Home","Fender Stratocaster", "Gibson SG", "Hollow Body Electric","Classical Guitar","Bass Guitar"];
-var whatisTitle=["text","heading","The Fender Strat:"];
-//html tag references to be inserted in gui.
-var whatis=["text","paragraph","One of the most versatile guitars around, I own one, it's brilliant."];
-var types=["text", "list", "Electric","Hollow body electric","steel strung acoustic","nylon strung acoustic","acoustic electric (both nylon and steel strung)","bass"];
-var photo=["img","spst.jpg","My strat is exactly of this kind. It's my favorite guitar.",0];
-// first index is starting index, second index is id (must be unique), photo, caption, repeat
+var banner ="banner.jpg";
+var title ="The big page";
+var  footer=["text","paragraph",""];
 
-
-//necessarily last, program defined.
-var components=[whatisTitle,whatis,photo];
-
-//end stuff printed to file by java program
-
-
+var component0=["text","heading","some heading"];
+var component1=["text","paragraph","Some text below it."];
+var component2=["img","es.jpg","es175 bruh",0];
+var component3=["slideshow",0,"component3ss","strat.jpg","strat","tele1.jpg","t-dog","abass.jpg","bass"];
+var component4=["video","tmtc.mp4","Type your caption here......"];
+var component5=["text", "list","list, bruh","Here's a <a class=\"inlineRef\" href=\"www.google.com\">link!</a>"];
+var components=[component0,component1,component2,component3,component4,component5,footer];
 
 
 
@@ -101,11 +90,8 @@ function loadSS(data){
     
 }
 function makeImg(data){
-    if(data[3]<0)
-        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: left\"><br>"+"<p class=\"caption\" style=\"float: left;\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
-    if(data[3]>0)
-        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: right\"><br>"+"<p class=\"caption\" style=\" float: right\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
-    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\" >"+data[2]+"</p>");
+    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\">"+data[2]+"</p>");
+    
 }
 function ssFind(ssID){
     var slideshowslength=slideshows.length;
@@ -178,3 +164,4 @@ function makeContent(){
     innerH+=contentPane;
     
 }
+

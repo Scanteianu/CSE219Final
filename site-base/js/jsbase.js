@@ -1,30 +1,3 @@
-/* 
- *Dan Scanteianu Webpage, License: none/sure
- */
-//begin stuff printed to file by java program
-var banner = "banner.jpg";
-
-var title="Fender Stratocaster";
-var author="Dan Scanteianu";
-var navStyle="horizontal-below";
-//var navStyle="horizontal-above";
-//var navStyle="vertical";
-var pages=["home","strat","sg","hollow","classical", "bass"];
-var pageNames=["Home","Fender Stratocaster", "Gibson SG", "Hollow Body Electric","Classical Guitar","Bass Guitar"];
-var whatisTitle=["text","heading","The Fender Strat:"];
-//html tag references to be inserted in gui.
-var whatis=["text","paragraph","One of the most versatile guitars around, I own one, it's brilliant."];
-var types=["text", "list", "Electric","Hollow body electric","steel strung acoustic","nylon strung acoustic","acoustic electric (both nylon and steel strung)","bass"];
-var photo=["img","spst.jpg","My strat is exactly of this kind. It's my favorite guitar.",0];
-// first index is starting index, second index is id (must be unique), photo, caption, repeat
-
-
-//necessarily last, program defined.
-var components=[whatisTitle,whatis,photo];
-
-//end stuff printed to file by java program
-
-
 
 
 
@@ -101,11 +74,8 @@ function loadSS(data){
     
 }
 function makeImg(data){
-    if(data[3]<0)
-        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: left\"><br>"+"<p class=\"caption\" style=\"float: left;\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
-    if(data[3]>0)
-        return ("<img  src=\"media/"+data[1]+"\" class=\"img\" style=\"float: right\"><br>"+"<p class=\"caption\" style=\" float: right\">"+data[2]+"</p><div style=\"clear: both;\"></div>");
-    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\" >"+data[2]+"</p>");
+    return ("<img  src=\"media/"+data[1]+"\" class=\"img\"><br>"+"<p class=\"caption\">"+data[2]+"</p>");
+    
 }
 function ssFind(ssID){
     var slideshowslength=slideshows.length;

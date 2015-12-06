@@ -87,7 +87,7 @@ public class ListEditorController implements Initializable {
             compStage.setScene(scene);
             compStage.setTitle("Add a link");
             compStage.showAndWait();
-            tf.insertText(tf.getCaretPosition(),link.text);
+            tf.appendText(link.text);
         } catch (IOException ex) {
             
             Logger.getLogger(ParagraphEditorController.class.getName()).log(Level.SEVERE, null, ex);

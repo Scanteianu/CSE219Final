@@ -90,7 +90,7 @@ public class ImageComp implements PageComponent, Serializable{
   
     @Override
     public String toHTML() {
-        return "var "+name+"=[\"video\",\""+this.fileName+"\",\""+caption+"\","+this.floatNum+"];";
+        return "var "+name+"=[\"img\",\""+this.fileName+"\",\""+caption+"\","+this.floatNum+"];";
     }
     public String toSSHTMLFragment(){
         return ",\""+this.fileName+"\",\""+this.caption+"\"";
