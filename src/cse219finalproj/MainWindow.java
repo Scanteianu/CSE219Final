@@ -160,6 +160,39 @@ public class MainWindow implements Initializable {
             newFile();
     }
     @FXML
+    private void viewSite(){
+        if(!exportQuietly()){
+            DebugPrint.println("vin de export, ba");
+            return;
+        }
+        String siteName=CSE219FinalProj.currentSite.getName().replaceAll(" ", "-");
+        if(siteName.contains("."))
+            siteName=(siteName.substring(0,siteName.indexOf(".")));
+        if(siteName.isEmpty())
+            siteName=("Untitled");
+        
+        
+        final WebEngine webEngine = webview.getEngine();
+        //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
+        File file =  new File("ExportedSites/"+siteName+"/"+CSE219FinalProj.currentPage.getName()+".html");
+        DebugPrint.println(file.getAbsolutePath());
+        try {
+            webEngine.load(file.toURI().toURL().toString());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private boolean exportQuietly(){
+        try {
+            SiteBuilder.BuildSite(CSE219FinalProj.currentSite);
+            return true;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            Messages.ErrorMessage("Couldn't export your site due to an IOException. Sorry.");
+            return false;
+        }
+    }
+    @FXML
     private void export(ActionEvent event) {
         try {
             SiteBuilder.BuildSite(CSE219FinalProj.currentSite);
@@ -284,6 +317,7 @@ public class MainWindow implements Initializable {
     @FXML
     private void refresh(ActionEvent event){
         updateInformation();
+        
     }
     @FXML
     private void switchPage(ActionEvent event){
@@ -323,6 +357,7 @@ public class MainWindow implements Initializable {
         footerArea.setText(CSE219FinalProj.currentPage.getFooter());
         bannerLabel.setText("Banner\n"+CSE219FinalProj.currentPage.getBannerFilename());
         CSE219FinalProj.stage.setTitle("Dan's Site Builder: "+CSE219FinalProj.currentSite.getName());
+        viewSite();
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -359,18 +394,11 @@ public class MainWindow implements Initializable {
         //titleField.textProperty().addListener(e->{CSE219FinalProj.currentPage.setTitle(titleField.getText());this.updateInformation();DebugPrint.println("tftc: "+titleField.getText());});
         authorField.setOnKeyReleased(e->{CSE219FinalProj.currentSite.setAuthor(authorField.getText());});
         footerArea.setOnKeyReleased(e->{CSE219FinalProj.currentPage.setFooter(footerArea.getText());});
-        layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));CSE219FinalProj.isSaved=false;});
-        colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));CSE219FinalProj.isSaved=false;});
-        fontBox.setOnAction(e->{CSE219FinalProj.currentSite.setFont(SiteFont.getValueByName((String)fontBox.getValue()));CSE219FinalProj.isSaved=false;});
+        layoutBox.setOnAction(e->{CSE219FinalProj.currentSite.setLayout(Layout.getValueByName((String)layoutBox.getValue()));CSE219FinalProj.isSaved=false;this.updateInformation();});
+        colorBox.setOnAction(e->{CSE219FinalProj.currentSite.setColor(SiteColor.getValueByName((String)colorBox.getValue()));CSE219FinalProj.isSaved=false;this.updateInformation();});
+        fontBox.setOnAction(e->{CSE219FinalProj.currentSite.setFont(SiteFont.getValueByName((String)fontBox.getValue()));CSE219FinalProj.isSaved=false;this.updateInformation();});
         updateInformation();
-        final WebEngine webEngine = webview.getEngine();
-        //String pageAddress = CSE219FinalProj.class.getResource("../../FreeGuitarWebsite/pages/home.html").toExternalForm();  
-        File file =  new File("FreeGuitarWebsite/pages/home.html");
-        try {
-            webEngine.load(file.toURI().toURL().toString());
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         
     }    
     
