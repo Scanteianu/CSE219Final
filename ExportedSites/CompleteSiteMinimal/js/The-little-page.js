@@ -1,7 +1,7 @@
 var author ="";
 var pages =["The-big-page","The-little-page"];
 var pageNames =["The big page","The little page"];
-var navStyle ="horizontal-below";
+var navStyle ="horizontal-above";
 
 var banner ="";
 var title ="The little page";

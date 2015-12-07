@@ -125,14 +125,14 @@ public class SiteBuilder {
             }
             components+="footer];\n";
             js+=components;
-            DebugPrint.println(js);
-            DebugPrint.println("---------------------------");
+            //DebugPrint.println(js);
+            //DebugPrint.println("---------------------------");
             List std=Files.readAllLines(new File("site-base/js/jsbase.js").toPath());
             for(int i=0; i<std.size(); i++){
                 js+=std.get(i)+"\n";
             }
             File pageHtml=new File("ExportedSites/"+site.getName()+"/js/"+p.getName()+".js");
-            DebugPrint.println(js);
+            //DebugPrint.println(js);
             try (PrintWriter writer = new PrintWriter(pageHtml, "UTF-8")) {
                 writer.println(js);
             }

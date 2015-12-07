@@ -106,9 +106,12 @@ public class MainWindow implements Initializable {
     @FXML
     private void saveAsClicked(ActionEvent event) {
         FileChooser jfc = new FileChooser();
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("EPortfolio files (*.ep)", "*.ep");
+        jfc.getExtensionFilters().add(extFilter);
         File f =jfc.showSaveDialog(null).getAbsoluteFile();
         CSE219FinalProj.currentSite.setLocation(f.getPath());
         CSE219FinalProj.currentSite.setName(f.getName());
+        this.updateInformation();
         
         try
       {

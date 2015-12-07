@@ -1,3 +1,19 @@
+var author ="Dan";
+var pages =["Garbage-Site"];
+var pageNames =["Garbage Site"];
+var navStyle ="vertical";
+
+var banner ="banner.jpg";
+var title ="Garbage Site";
+var  footer=["text","paragraph","Some garbage Here"];
+
+var component0=["text","heading","Type your heading here."];
+var component1=["text","paragraph","Type your text here."];
+var component2=["text", "list","asdf","qwerqwr"];
+var component3=["img","prs2.jpg","Type your caption aass",1];
+var component4=["img","jbass.jpg","Type your caption here......",-1];
+var component5=["slideshow",0,"component5ss","es.jpg","Type your caption here......","prs2.jpg","Type your caption here......","spst.jpg","Type your caption here......"];
+var components=[component0,component1,component2,component3,component4,component5,footer];
 
 
 
@@ -152,3 +168,4 @@ function makeContent(){
     innerH+=contentPane;
     
 }
+
