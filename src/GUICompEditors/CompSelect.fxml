@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="163.0" styleClass="hbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUICompEditors.CompSelectController">
+    <stylesheets>
+        <URL value="@compselect.css" />
+      <URL value="@compeditor.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="4.0" layoutY="3.0" prefHeight="326.0" prefWidth="139.0" styleClass="hbox">
+         <children>
+            <Button mnemonicParsing="false" onAction="#insertHeading" prefHeight="42.0" prefWidth="116.0" text="Heading" />
+            <Button mnemonicParsing="false" onAction="#insertParagraph" prefHeight="42.0" prefWidth="118.0" text="Paragraph" />
+            <Button mnemonicParsing="false" onAction="#insertList" prefHeight="42.0" prefWidth="115.0" text="List" />
+            <Button mnemonicParsing="false" onAction="#insertImg" prefHeight="42.0" prefWidth="115.0" text="Image" />
+            <Button mnemonicParsing="false" onAction="#insertSlideshow" prefHeight="42.0" prefWidth="119.0" text="Slideshow" />
+            <Button mnemonicParsing="false" onAction="#insertVideo" prefHeight="42.0" prefWidth="137.0" text="Video" />
+            <Button mnemonicParsing="false" onAction="#cancelClicked" prefHeight="42.0" prefWidth="116.0" text="Cancel" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

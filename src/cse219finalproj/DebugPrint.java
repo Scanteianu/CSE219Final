@@ -12,7 +12,7 @@ package cse219finalproj;
 public class DebugPrint {
     public static void println(String s)
     {
-        System.out.println(s);
+        //System.out.println(s);
     }
     
 }

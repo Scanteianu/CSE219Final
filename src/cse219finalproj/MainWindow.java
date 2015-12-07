@@ -24,7 +24,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -34,6 +37,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 import model.CompType;
 import model.Layout;
 import model.Page;
@@ -196,6 +200,13 @@ public class MainWindow implements Initializable {
     private void export(ActionEvent event) {
         try {
             SiteBuilder.BuildSite(CSE219FinalProj.currentSite);
+            String siteName=CSE219FinalProj.currentSite.getName().replaceAll(" ", "-");
+        if(siteName.contains("."))
+            siteName=(siteName.substring(0,siteName.indexOf(".")));
+        if(siteName.isEmpty())
+            siteName=("Untitled");
+        File file =  new File("ExportedSites/"+siteName+"/"+CSE219FinalProj.currentPage.getName()+".html");
+        Messages.infoMessage("Your site can now be found at: "+file.getAbsolutePath()+". Copy the whole folder to move.");
         } catch (IOException ex) {
             ex.printStackTrace();
             Messages.ErrorMessage("Couldn't export your site due to an IOException. Sorry.");
@@ -287,6 +298,11 @@ public class MainWindow implements Initializable {
     private void insertVideo(ActionEvent event){
         ComponentEditorWrapper cer = new ComponentEditorWrapper();
         cer.make(CompType.VIDEO);
+    }
+    @FXML
+    private void typeSelector(ActionEvent event){
+        ComponentEditorWrapper cew=new ComponentEditorWrapper();
+        cew.select();
     }
     @FXML
     private void insertPage(ActionEvent event){

@@ -29,6 +29,19 @@ public class ComponentEditorWrapper {
     public ComponentEditorWrapper(){
         
     }
+    public void select(){
+        try {
+            Parent root=null;
+            root= FXMLLoader.load(getClass().getResource("CompSelect.fxml"));
+            Scene scene=new Scene(root);
+            Stage compStage=new Stage();
+            compStage.setScene(scene);
+            compStage.show();
+            compStage.setTitle("Select type of component:");
+        } catch (IOException ex) {
+            
+        }
+    }
     public void make(CompType type){
        
         String title="";

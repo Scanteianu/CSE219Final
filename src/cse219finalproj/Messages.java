@@ -21,6 +21,13 @@ public class Messages {
             alert.setContentText(message);
             alert.showAndWait();
     }
+    public static void infoMessage(String message){
+        Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("E-Portfolio Maker");
+            alert.setHeaderText("Notice:");
+            alert.setContentText(message);
+            alert.showAndWait();
+    }
     public static boolean save(String currentFile){
          Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("E-Portfolio Maker");

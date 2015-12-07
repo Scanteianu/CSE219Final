@@ -106,7 +106,7 @@
                </tooltip> 
             </Button>
             <Separator prefWidth="200.0" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="44.0" styleClass="button" wrapText="true" GridPane.rowIndex="6">
+            <Button mnemonicParsing="false" onAction="#typeSelector" prefHeight="34.0" prefWidth="44.0" styleClass="button" wrapText="true" GridPane.rowIndex="6">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                      <image>
