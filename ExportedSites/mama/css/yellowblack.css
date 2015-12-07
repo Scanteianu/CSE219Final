@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 5, 2015, 11:10:20 PM
+    Author     : Dan
+*/
+
+body {
+    background-color: yellow;
+}
+table.nav{
+    
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    //font-family: "Courgette";
+    background-color: orange;
+    
+}
+a.nav{
+    color: rgb(0,0,50);
+    font-size: 18;
+}
+a.inlineRef{
+    color: rgb(0,0,50);
+}
+p.caption{
+    text-align: center;
+    font-size: 12;
+    font-style: italic;
+    color: rgb(0,0,50);
+    //font-family: "Courgette";
+}
+p.paragraph{
+    text-align: left;
+    font-size: 18;
+    //font-family: "Courgette";
+    color: rgb(0,0,50);
+}
+p.list{
+    text-align: left;
+    font-size: 18;
+    //font-family: "Courgette";
+    color: rgb(0,0,50);
+}
+ul.list{
+    color: rgb(0,0,50);
+    font-size: 18;
+    //font-family: "Courgette";
+}
+p.heading{
+    text-align: left;
+    font-size: 24;
+    //font-family: "Courgette";
+    color: rgb(0,0,50);
+}
+p.caption{
+    
+}
+div.central{
+    text-align: center;
+    font-size: 12;
+    //font-family: "Courgette";
+}
+h1.banner{
+    text-align: left;
+    font-size: 36;
+    //font-family: "Courgette";
+    color: rgb(0,0,50);
+    margin-bottom: 0px;
+}
+h2.banner{
+    text-align: left;
+    font-size: 16;
+    //font-family: "Courgette";
+    color: rgb(0,0,50);
+    margin-top: 0px;
+}

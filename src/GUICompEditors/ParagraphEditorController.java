@@ -44,7 +44,7 @@ public class ParagraphEditorController implements Initializable {
         text.setText(tc.getText());
     }    
      public void okClicked(ActionEvent e){
-         tc.setText(text.getText());
+         tc.setText(text.getText().replaceAll("\n", "<br>"));
          if(!isEdit)
              CSE219FinalProj.currentPage.getComponents().add(tc);
          CSE219FinalProj.window.updateInformation();
